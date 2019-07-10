@@ -1,0 +1,15 @@
+{
+  "Ground": [{
+    "type": "image",
+    "key": "floor",
+    "url": "assets/sprites/floor.png",
+    "overwrite": false
+  }],
+  "meta": {
+    "generated": "1562712944627",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Level",
+    "sceneWidth": 640,
+    "sceneHeight": 960,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      133,
+      201,
+      205
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": false,
+    "create_after": "\tthis.myCreate();\r\n\r\n"
+  },
+  "stateSettings": {
+    "scaleMode": "SHOW_ALL",
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
+    "stageBackgroundColor": [
+      101,
+      237,
+      255
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "8a0fc0bc-e3be-4656-9585-f855ac8ba0bb",
+    "info": {
+      "editorName": "Level",
+      "setAll": [],
+      "children": [
+        {
+          "type": "image",
+          "id": "2ce3e180-f6b0-4fb9-b455-ee9f658b5603",
+          "asset": "0",
+          "info": {
+            "editorName": "floor",
+            "x": -141,
+            "y": 772
+          }
+        },
+        {
+          "type": "text",
+          "id": "1caab328-1560-4093-9221-f7313302024f",
+          "info": {
+            "editorName": "hellowText",
+            "x": 16,
+            "y": 10,
+            "text": "Ballonaizer",
+            "style.fontSize": 40,
+            "style.fill": "#f9fcff"
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "0",
+          "id": "e5164f46-510e-4e04-9b3b-7d474ff91c7a",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "player",
+            "asset": "player1"
+          },
+          "info": {
+            "editorName": "player",
+            "editorField": true,
+            "x": 290,
+            "y": 705
+          }
+        }
+      ]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "floor"
+  }},
+  "prefab-table": {"0": "WebContent/assets/canvas/prefabs/Player.canvas"}
+}

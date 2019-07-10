@@ -1,0 +1,22 @@
+{
+  "player": [
+    {
+      "type": "image",
+      "key": "player1",
+      "url": "assets/sprites/player.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "player2",
+      "url": "assets/canvas/prefabs/Player.js"
+    }
+  ],
+  "meta": {
+    "generated": "1562712800810",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}
