@@ -27,6 +27,7 @@
       0
     ],
     "autoLoad": true,
+    "preloadSpriteId": "",
     "preloadSprite_direction": 0,
     "load.pack": []
   },
@@ -40,7 +41,11 @@
         "type": "image",
         "id": "57390a5d-a3e7-4561-9b27-25c83426cf28",
         "asset": "0",
-        "info": {"editorName": "player1"}
+        "info": {
+          "editorName": "player1",
+          "pivot.x": 0.5,
+          "pivot.y": 0.5
+        }
       }]
     }
   },

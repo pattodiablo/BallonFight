@@ -7,7 +7,7 @@ function PlatformerBehavior(state, nextLevel, player) {
 
 	// physics
 	this._arcade = state.game.physics.arcade;
-	this._arcade.gravity.y = 50;
+	this._arcade.gravity.y = 90;
 
 	// player
 	this._player = player;
@@ -17,13 +17,16 @@ function PlatformerBehavior(state, nextLevel, player) {
 
 	// cursors
 	this._cursors = this._state.input.keyboard.createCursorKeys();
-	
+	this._state.input.addPointer();
 }
 
 PlatformerBehavior.prototype.update = function() {
 
 	// update player velocity
+	this._state.game.input.pointer1;
+	
 
+	
 	var velocity = this._player.body.velocity;
 
 	velocity.x = 0;
@@ -49,11 +52,13 @@ PlatformerBehavior.prototype.update = function() {
 
 	var pointer = this._state.input.activePointer;
 	
+	
+	
 	if (pointer.isDown) {
 	    var touchX = pointer.x;
 	    //var touchY = pointer.y;
-	    console.log(touchX);
-	    if(touchX>this._state.scale.width/2){
+	   // console.log(touchX);
+	    if(touchX> this._player.x){
 	    
 	    	velocity.x = 100;
 	    	

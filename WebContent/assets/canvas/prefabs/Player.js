@@ -16,9 +16,9 @@
  */
 function Player(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'player1', aFrame == undefined || aFrame == null? null : aFrame);
+	this.pivot.set(0.5, 0.5);
 	this.game.physics.arcade.enable(this);
 	this.body.collideWorldBounds = true;
-	
 }
 
 /** @type Phaser.Sprite */
