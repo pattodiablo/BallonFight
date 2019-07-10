@@ -14,74 +14,81 @@ function PlatformerBehavior(state, nextLevel, player) {
 	this._state.camera.follow(this._player);
 	this._state.camera.width=640;
 	this._state.camera.height=960;
+	this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 50;  
+	this._velocity = this._player.body.velocity;
+	this._factorX = 0;
+	this._factorY = 0;
 
+	
 	// cursors
 	this._cursors = this._state.input.keyboard.createCursorKeys();
 	this._state.input.addPointer();
+	
+	
+this._state.input.onDown.add(function(pointer) {
+		
+		this.swipeCoordX = pointer.clientX;   
+		this.swipeCoordY = pointer.clientY; 
+		
+	}, this);   
+
+this._state.input.onUp.add(function(pointer) { 
+	
+	this.swipeCoordX2 = pointer.clientX;        
+	this.swipeCoordY2 = pointer.clientY;        
+	
+	this.veloX = 100;
+	
+	if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
+		
+		console.log("left");  
+		this.dirX=-1;	
+	 	
+	}
+	
+	else if(this.swipeCoordX2 > this.swipeCoordX + this.swipeMinDistance){            
+		
+		this.dirX=1;
+		console.log("rigth");  
+	 	
+	}
+	
+	else if(this.swipeCoordY2 < this.swipeCoordY - this.swipeMinDistance){
+		
+	
+		this._velocity.y = -100 ;
+		console.log("up");        
+		
+	}
+	else if(this.swipeCoordY2 > this.swipeCoordY + this.swipeMinDistance){  
+	
+		this._velocity.y = 200 ;
+	
+		console.log("down");        
+		
+	}   
+	 	
+	}, this);
+
+	
 }
 
 PlatformerBehavior.prototype.update = function() {
-
-	// update player velocity
-	this._state.game.input.pointer1;
 	
-
-	
-	var velocity = this._player.body.velocity;
-
-	velocity.x = 0;
-
-	if (this._cursors.left.isDown) {
-		velocity.x = -100;
-	
-	} else if (this._cursors.right.isDown) {
-		velocity.x = 100;
-
+	if(this.veloX!=0){
+		this.veloX--;	
 	}
 	
-	if(this._state.input.activePointer.leftButton.isDown){
-		velocity.y = -50;
-		
-	}
-
-
-	this._state.input.onDown.add(function() {
-		velocity.y = -50;
-	    });
-
-
-	var pointer = this._state.input.activePointer;
 	
 	
+	this._velocity.x=this.veloX*this.dirX;
 	
-	if (pointer.isDown) {
-	    var touchX = pointer.x;
-	    //var touchY = pointer.y;
-	   // console.log(touchX);
-	    if(touchX> this._player.x){
-	    
-	    	velocity.x = 100;
-	    	
-	    }else{
-	    	
-	        velocity.x = -100;
-	    }
-	} 
-	    
-	// update player animation
+	//this._state.physics.arcade.velocityFromAngle(this._player.angle+this.angulo, this.velo, this._player.body.velocity);
 
-		var moving = this._player.body.velocity.x != 0;
+	
 
-		if (this._cursors.up.isDown) {
-			velocity.y = -100;
-			
-		} else if (moving) {
-			
-			this._player.play("walk");
-		} else {
-			
-			this._player.play("stay");
-		}
+	
+
 	
 };
 

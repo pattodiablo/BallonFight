@@ -37,7 +37,8 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-	this.add.sprite(-141.0, 772.0, 'floor');
+	var _floor1 = new Piso(this.game, -141.0, 839.0);
+	this.add.existing(_floor1);
 	
 	this.add.text(16.0, 10.0, 'Ballonaizer', {"font":"bold 40px Arial","fill":"#f9fcff"});
 	

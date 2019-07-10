@@ -1,12 +1,19 @@
 {
-  "Ground": [{
-    "type": "image",
-    "key": "floor",
-    "url": "assets/sprites/floor.png",
-    "overwrite": false
-  }],
+  "Ground": [
+    {
+      "type": "image",
+      "key": "floor",
+      "url": "assets/sprites/floor.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Piso",
+      "url": "assets/canvas/prefabs/Piso.js"
+    }
+  ],
   "meta": {
-    "generated": "1562772205473",
+    "generated": "1562783173922",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
