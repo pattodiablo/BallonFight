@@ -54,10 +54,10 @@
 			this.swipeCoordX2 = pointer.clientX;        
 			this.swipeCoordY2 = pointer.clientY;        
 			
-			this.Dx = this.swipeCoordX - this.swipeCoordX2;
-			this.Dy = this.swipeCoordY - this.swipeCoordY2;
+			this.Dx = Math.abs(this.swipeCoordX - this.swipeCoordX2);
+			this.Dy = Math.abs(this.swipeCoordY - this.swipeCoordY2);
 
-			this.Power = Math.sqrt((this.Dx * this.Dx ) + (this.Dy*this.Dy) );
+			
 	
 		if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
 		
@@ -75,13 +75,13 @@
 	
 		if(this.swipeCoordY2 < this.swipeCoordY - this.swipeMinDistance){
 	
-			this._velocity.y = -this.Power ;
+			this._velocity.y = -this.Dy;
 			console.log("up");        
 		
 		}
 		if(this.swipeCoordY2 > this.swipeCoordY + this.swipeMinDistance){  
 	
-			this._velocity.y = this.Power ;
+			this._velocity.y = this.Dy;
 			console.log("down");        
 		
 		}   
@@ -99,7 +99,7 @@
 			this.veloX--;	
 		}
 		
-	this._velocity.x=this.Power*this.dirX;
+	this._velocity.x=this.Dx*this.dirX;
 	
 	
 
