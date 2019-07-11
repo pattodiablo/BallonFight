@@ -32,6 +32,7 @@
 		
 	//piso	
 		this._floor.body.enable = true;
+		this._floor.body.collide = true;
 		this._floor.body.allowGravity = false;
 		this._floor.body.immovable = true;
 		
@@ -94,6 +95,14 @@
 	}
 
 	PlatformerBehavior.prototype.update = function() {
+
+		this._state.physics.arcade.collide(this._player, this._floor, touchingFloor);
+
+		function touchingFloor(player, floor){
+
+			//console.log("collinding shit");
+		}
+
 		
 		if(this.veloX!=0){
 			this.veloX--;	

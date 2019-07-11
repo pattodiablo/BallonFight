@@ -10,10 +10,16 @@
       "type": "script",
       "key": "Piso",
       "url": "assets/canvas/prefabs/Piso.js"
+    },
+    {
+      "type": "image",
+      "key": "grass",
+      "url": "assets/sprites/grass.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1562783173922",
+    "generated": "1562877912803",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
