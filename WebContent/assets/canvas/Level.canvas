@@ -53,8 +53,8 @@
           },
           "info": {
             "editorName": "floor1",
-            "x": -141,
-            "y": 839
+            "x": 324,
+            "y": 924
           }
         },
         {
@@ -80,7 +80,6 @@
           },
           "info": {
             "editorName": "player",
-            "editorField": true,
             "x": 290,
             "y": 705
           }

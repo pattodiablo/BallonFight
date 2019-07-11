@@ -37,7 +37,7 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-	var _floor1 = new Piso(this.game, -141.0, 839.0);
+	var _floor1 = new Piso(this.game, 324.0, 924.0);
 	this.add.existing(_floor1);
 	
 	this.add.text(16.0, 10.0, 'Ballonaizer', {"font":"bold 40px Arial","fill":"#f9fcff"});
@@ -49,6 +49,7 @@ Level.prototype.create = function () {
 	
 	// fields
 	
+	this.fFloor1 = _floor1;
 	this.fPlayer = _player;
 		this.myCreate();
 	
@@ -62,7 +63,7 @@ Level.prototype.myInit = function() {
 };
 
 Level.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer);
+	this.behavior = new PlatformerBehavior(this, "Level1", this.fPlayer, this.fFloor1);
 };
 
 Level.prototype.update = function () {

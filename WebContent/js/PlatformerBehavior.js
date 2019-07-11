@@ -1,105 +1,118 @@
 
-function PlatformerBehavior(state, nextLevel, player) {
+	function PlatformerBehavior(state, nextLevel, player, floor) {
 	// init
 
-	this._state = state;
-	this._nextLevel = nextLevel;
-
+		this._state = state;
+		this._nextLevel = nextLevel;
+	
 	// physics
-	this._arcade = state.game.physics.arcade;
-	this._arcade.gravity.y = 90;
+		this._arcade = state.game.physics.arcade;
+		this._arcade.gravity.y = 90;
 
 	// player
-	this._player = player;
-	this._state.camera.follow(this._player);
-	this._state.camera.width=640;
-	this._state.camera.height=960;
-	this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 50;  
-	this._velocity = this._player.body.velocity;
-	this._factorX = 0;
-	this._factorY = 0;
+		this._player = player;
+		this._floor = floor;
+		this._state.camera.follow(this._player);
+		this._state.camera.width=640;
+		this._state.camera.height=960;
+		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 10;  
+		this._factorX = 0;
+		this._factorY = 0;
+	
+		
+	//habilitar fisica para todos los objetos	
+		this._state.physics.arcade.enable([this._player, this._floor]);
+		
+	
+	//player	
+		this._player.body.enable = true;
+		this._player.body.allowGravity = true;
+		this._player.body.collideWorldBounds = true;
+		this._velocity = this._player.body.velocity;
+		
+	//piso	
+		this._floor.body.enable = true;
+		this._floor.body.allowGravity = false;
+		this._floor.body.immovable = true;
+		
+		this._state.physics.arcade.collide(this._player, this._floor);
+		
+	// touchScreen
+		
+		this._state.input.addPointer();
 
 	
-	// cursors
-	this._cursors = this._state.input.keyboard.createCursorKeys();
-	this._state.input.addPointer();
-	
-	
-this._state.input.onDown.add(function(pointer) {
-		
-		this.swipeCoordX = pointer.clientX;   
-		this.swipeCoordY = pointer.clientY; 
-		
-	}, this);   
+		this._state.input.onDown.add(function(pointer) {
+			
+			this.swipeCoordX = pointer.clientX;   
+			this.swipeCoordY = pointer.clientY; 
+			
+		}, this);   
 
-this._state.input.onUp.add(function(pointer) { 
-	
-	this.swipeCoordX2 = pointer.clientX;        
-	this.swipeCoordY2 = pointer.clientY;        
-	
-	this.veloX = 100;
-	
-	if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
+		this._state.input.onUp.add(function(pointer) { 
 		
-		console.log("left");  
-		this.dirX=-1;	
+			this.swipeCoordX2 = pointer.clientX;        
+			this.swipeCoordY2 = pointer.clientY;        
+			
+			this.Dx = this.swipeCoordX - this.swipeCoordX2;
+			this.Dy = this.swipeCoordY - this.swipeCoordY2;
+
+			this.Power = Math.sqrt((this.Dx * this.Dx ) + (this.Dy*this.Dy) );
+	
+		if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
+		
+			console.log("left");  
+			this.dirX=-1;	
 	 	
-	}
+		}
 	
-	else if(this.swipeCoordX2 > this.swipeCoordX + this.swipeMinDistance){            
-		
-		this.dirX=1;
-		console.log("rigth");  
+		if(this.swipeCoordX2 > this.swipeCoordX + this.swipeMinDistance){            
+			
+			this.dirX=1;
+			console.log("rigth");  
 	 	
-	}
+		}
 	
-	else if(this.swipeCoordY2 < this.swipeCoordY - this.swipeMinDistance){
+		if(this.swipeCoordY2 < this.swipeCoordY - this.swipeMinDistance){
+	
+			this._velocity.y = -this.Power ;
+			console.log("up");        
 		
+		}
+		if(this.swipeCoordY2 > this.swipeCoordY + this.swipeMinDistance){  
 	
-		this._velocity.y = -100 ;
-		console.log("up");        
+			this._velocity.y = this.Power ;
+			console.log("down");        
 		
-	}
-	else if(this.swipeCoordY2 > this.swipeCoordY + this.swipeMinDistance){  
-	
-		this._velocity.y = 200 ;
-	
-		console.log("down");        
-		
-	}   
-	 	
-	}, this);
+		}   
 
-	
-}
+	 	this.veloX = 100;
 
-PlatformerBehavior.prototype.update = function() {
-	
-	if(this.veloX!=0){
-		this.veloX--;	
-	}
-	
-	
-	
-	this._velocity.x=this.veloX*this.dirX;
-	
-	//this._state.physics.arcade.velocityFromAngle(this._player.angle+this.angulo, this.velo, this._player.body.velocity);
-
-	
-
-	
-
-	
-};
-
-PlatformerBehavior.prototype.startNextLevel = function() {
-	if (!this._levelOver) {
-		this._levelOver = true;
-		this._state.camera.fade();
-		this._state.time.events.add(1000, function (){
-			this._state.game.state.start(this._nextLevel);
 		}, this);
+
+	
 	}
-};
+
+	PlatformerBehavior.prototype.update = function() {
+		
+		if(this.veloX!=0){
+			this.veloX--;	
+		}
+		
+	this._velocity.x=this.Power*this.dirX;
+	
+	
+
+	};
+
+	PlatformerBehavior.prototype.startNextLevel = function() {
+		if (!this._levelOver) {
+			this._levelOver = true;
+			this._state.camera.fade();
+			this._state.time.events.add(1000, function (){
+				this._state.game.state.start(this._nextLevel);
+			}, this);
+		}
+	};
 
 

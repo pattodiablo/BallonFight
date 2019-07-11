@@ -7,7 +7,7 @@
 
 
 /**
- * player
+ * Player
  * @param {Phaser.Game} aGame A reference to the currently running game.
  * @param {Number} aX The x coordinate (in world space) to position the Sprite at.
  * @param {Number} aY The y coordinate (in world space) to position the Sprite at.
@@ -17,8 +17,11 @@
 function Player(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'player1', aFrame == undefined || aFrame == null? null : aFrame);
 	this.pivot.set(0.5, 0.5);
-	this.game.physics.arcade.enable(this);
-	this.body.collideWorldBounds = true;
+	
+	// fields
+	
+	this.fPlayer1 = this;
+	
 }
 
 /** @type Phaser.Sprite */

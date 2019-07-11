@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "player",
+    "className": "Player",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -43,6 +43,7 @@
         "asset": "0",
         "info": {
           "editorName": "player1",
+          "editorField": true,
           "pivot.x": 0.5,
           "pivot.y": 0.5
         }
