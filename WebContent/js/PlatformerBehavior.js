@@ -1,5 +1,5 @@
 
-	function PlatformerBehavior(state, nextLevel, player, floor) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos) {
 	// init
 
 		this._state = state;
@@ -11,17 +11,17 @@
 
 	// player
 		this._player = player;
-		this._floor = floor;
+		this._plataformas= plataformas;
+		this._enemigos = enemigos;
 		this._state.camera.follow(this._player);
 		this._state.camera.width=640;
 		this._state.camera.height=960;
-		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 10;  
-		this._factorX = 0;
-		this._factorY = 0;
+		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 1;  
+		this.AirFriction = 0.8;	
 	
 		
 	//habilitar fisica para todos los objetos	
-		this._state.physics.arcade.enable([this._player, this._floor]);
+		this._state.physics.arcade.enable([this._player, this._plataformas, this._enemigos]);
 		
 	
 	//player	
@@ -30,14 +30,20 @@
 		this._player.body.collideWorldBounds = true;
 		this._velocity = this._player.body.velocity;
 		
-	//piso	
-		this._floor.body.enable = true;
-		this._floor.body.collide = true;
-		this._floor.body.allowGravity = false;
-		this._floor.body.immovable = true;
+	//enemigos	
 		
-		this._state.physics.arcade.collide(this._player, this._floor);
+		this._arcade.enable(this._enemigos, true);
+		this._enemigos.setAll("body.allowGravity", true);
+		this._enemigos.setAll("body.immovable", false);
+		this._enemigos.setAll("body.collideWorldBounds", true);
 		
+		
+	//plataformas
+		this._arcade.enable(this._plataformas, true);
+		this._plataformas.setAll("body.allowGravity", false);
+		this._plataformas.setAll("body.immovable", true);
+		this._plataformas.setAll("body.friccion", false);	
+
 	// touchScreen
 		
 		this._state.input.addPointer();
@@ -91,21 +97,62 @@
 
 		}, this);
 
-	
+		this._enemigos.forEach(function(enemy) {
+    		
+    		
+    		console.log('entro a foreach');
+
+			this._state.time.events.loop(Math.random()*4000, updateCounter);
+
+
+			function updateCounter(){
+				this.enemyPowerX=Math.random()*100;
+				this.enemyPowerY=Math.random()*200;
+				this.enemyDir = Math.random()*10;
+				if(this.enemyDir > 5){
+
+					this.enemyDir=-1;
+				}else{
+					this.enemyDir=1;
+				}
+
+				enemy.body.velocity.x=this.enemyPowerX*this.enemyDir;
+				enemy.body.velocity.y=-this.enemyPowerY;
+
+			console.log(enemy.body.velocity.x);
+
+			}
+
+  		}, this);
+
+
+  		
 	}
+
+		
 
 	PlatformerBehavior.prototype.update = function() {
 
-		this._state.physics.arcade.collide(this._player, this._floor, touchingFloor);
+		this._arcade.collide(this._player, this._plataformas);
+		this._arcade.collide(this._player, this._enemigos);
+		this._arcade.collide(this._plataformas, this._enemigos);
+
+
+
+
 
 		function touchingFloor(player, floor){
 
 			//console.log("collinding shit");
 		}
 
+		//reducción de velocidad de player en eje x
 		
-		if(this.veloX!=0){
-			this.veloX--;	
+		if(this.Dx>=0){
+			this.Dx-=this.AirFriction;	
+		}else{
+
+			this.Dx=0;
 		}
 		
 	this._velocity.x=this.Dx*this.dirX;
@@ -114,14 +161,5 @@
 
 	};
 
-	PlatformerBehavior.prototype.startNextLevel = function() {
-		if (!this._levelOver) {
-			this._levelOver = true;
-			this._state.camera.fade();
-			this._state.time.events.add(1000, function (){
-				this._state.game.state.start(this._nextLevel);
-			}, this);
-		}
-	};
 
 

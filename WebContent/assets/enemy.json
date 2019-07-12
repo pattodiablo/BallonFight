@@ -1,19 +1,19 @@
 {
-  "player": [
+  "Enemy": [
     {
       "type": "image",
-      "key": "player1",
-      "url": "assets/sprites/player.png",
+      "key": "enemy",
+      "url": "assets/sprites/enemy.png",
       "overwrite": false
     },
     {
       "type": "script",
-      "key": "player2",
-      "url": "assets/canvas/prefabs/Player.js"
+      "key": "Enemy1",
+      "url": "assets/canvas/prefabs/Enemy.js"
     }
   ],
   "meta": {
-    "generated": "1562895535534",
+    "generated": "1562895651317",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

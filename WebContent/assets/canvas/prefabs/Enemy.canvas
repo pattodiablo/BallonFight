@@ -1,0 +1,61 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Enemy",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_before": "this.myCreate();\n"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "699a21ba-5b9c-4204-9136-e9056b4bbeee",
+    "info": {
+      "editorName": "Enemy",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "86f55d30-96c1-4c1b-a169-4677db611ea5",
+        "asset": "0",
+        "info": {
+          "editorName": "enemy",
+          "editorField": true,
+          "pivot.x": 0.5,
+          "pivot.y": 0.5
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/enemy.json",
+    "section": "Enemy",
+    "asset": "enemy"
+  }},
+  "prefab-table": {}
+}

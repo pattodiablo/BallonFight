@@ -53,21 +53,6 @@
           }
         },
         {
-          "type": "prefab",
-          "prefab": "0",
-          "id": "df2ffe35-33f3-496b-9939-16f8327f6c1c",
-          "asset-ref": {
-            "file": "WebContent/assets/eviroment.json",
-            "section": "Ground",
-            "asset": "floor"
-          },
-          "info": {
-            "editorName": "floor1",
-            "x": 324,
-            "y": 935
-          }
-        },
-        {
           "type": "text",
           "id": "1caab328-1560-4093-9221-f7313302024f",
           "info": {
@@ -81,7 +66,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "1",
+          "prefab": "0",
           "id": "e5164f46-510e-4e04-9b3b-7d474ff91c7a",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -92,6 +77,118 @@
             "editorName": "player",
             "x": 290,
             "y": 705
+          }
+        },
+        {
+          "type": "group",
+          "id": "637524f4-ecf5-4960-a68e-62d834963e20",
+          "info": {
+            "editorName": "Plataformas",
+            "editorField": true,
+            "setAll": [],
+            "children": [
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "58b04c30-ba5e-41ad-b412-23c155396558",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "floor"
+                },
+                "info": {
+                  "editorName": "floor",
+                  "x": -237,
+                  "y": 527
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "df2ffe35-33f3-496b-9939-16f8327f6c1c",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "floor"
+                },
+                "info": {
+                  "editorName": "floor1",
+                  "x": 324,
+                  "y": 935
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "128256ab-f2e2-41ea-b89a-0efa79276651",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "floor"
+                },
+                "info": {
+                  "editorName": "floor2",
+                  "x": 935,
+                  "y": 207
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "group",
+          "id": "b78e5f6b-96df-4d9e-ba3c-8dbdc6c53a61",
+          "info": {
+            "editorName": "Enemies",
+            "editorField": true,
+            "setAll": [],
+            "children": [
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "bae6d2c2-a19c-4336-8356-bce700eab4fe",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy"
+                },
+                "info": {
+                  "editorName": "enemy",
+                  "x": 155,
+                  "y": 408
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "618cfb6c-c008-4da8-92d2-10cb24462e1e",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy"
+                },
+                "info": {
+                  "editorName": "enemy",
+                  "x": 426,
+                  "y": 86
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "6809c696-71e3-4817-aeb1-2b24e9891fba",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy"
+                },
+                "info": {
+                  "editorName": "enemy",
+                  "x": 518,
+                  "y": 812
+                }
+              }
+            ]
           }
         }
       ]
@@ -104,7 +201,8 @@
     "asset": "grass"
   }},
   "prefab-table": {
-    "0": "WebContent/assets/canvas/prefabs/Piso.canvas",
-    "1": "WebContent/assets/canvas/prefabs/Player.canvas"
+    "0": "WebContent/assets/canvas/prefabs/Player.canvas",
+    "1": "WebContent/assets/canvas/prefabs/Piso.canvas",
+    "2": "WebContent/assets/canvas/prefabs/Enemy.canvas"
   }
 }
