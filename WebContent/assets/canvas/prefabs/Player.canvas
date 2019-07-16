@@ -47,7 +47,8 @@
           "pivot.x": 0.5,
           "pivot.y": 0.5,
           "anchor.x": 0.5,
-          "anchor.y": 0.5
+          "anchor.y": 0.5,
+          "data": "\tthis.data = {game:this.game.state﻿.getCurrentState()};"
         }
       }]
     }

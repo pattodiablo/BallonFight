@@ -16,6 +16,8 @@
 		this._enemigos2 = enemigos2;
 		this.maxPower = 200;
 		this._state.camera.follow(this._player);
+		this._state.camera.onFadeComplete.add(this.resetLevel, this);
+
 
 	
 
@@ -269,7 +271,11 @@
   		
 	}
 
+	PlatformerBehavior.prototype.resetLevel = function() {
+		console.log(this._state.game);
 		
+this._state.game.state.start("Level");
+		}
 
 	PlatformerBehavior.prototype.update = function() {
 
@@ -285,16 +291,21 @@
 
 		function touchingEnemy(player, enemy){
 
+			player.visible = false;
 	
 		
 			if(enemy.body.touching.up){
 				
 				//enemy.visible = false;
+
 				console.log("kill the bastard");
 
 			}else{
 
-				console.log("damage");
+
+				player.data.game.camera.fade(0x000000, 2000);
+				player.destroy();
+				console.log();
 			}
 			
 
