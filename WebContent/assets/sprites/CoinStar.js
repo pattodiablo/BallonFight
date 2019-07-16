@@ -7,45 +7,26 @@
 
 
 /**
- * Enemy
+ * CoinStar
  * @param {Phaser.Game} aGame A reference to the currently running game.
  * @param {Number} aX The x coordinate (in world space) to position the Sprite at.
  * @param {Number} aY The y coordinate (in world space) to position the Sprite at.
  * @param {any} aKey This is the image or texture used by the Sprite during rendering. It can be a string which is a reference to the Cache entry, or an instance of a RenderTexture or PIXI.Texture.
  * @param {any} aFrame If this Sprite is using part of a sprite sheet or texture atlas you can specify the exact frame to use by giving a string or numeric index.
  */
-function Enemy(aGame, aX, aY, aKey, aFrame) {
-	
-	this.myCreate();
-	
-	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'enemy', aFrame == undefined || aFrame == null? null : aFrame);
-	this.pivot.set(0.5, 0.5);
-	this.data = {game:this.game.state﻿.getCurrentState()};
+function CoinStar(aGame, aX, aY, aKey, aFrame) {
+	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'coinStar', aFrame == undefined || aFrame == null? null : aFrame);
 	
 	// fields
 	
-	this.fEnemy = this;
+	this.fCoinStar = this;
 	
 }
 
 /** @type Phaser.Sprite */
-var Enemy_proto = Object.create(Phaser.Sprite.prototype);
-Enemy.prototype = Enemy_proto;
-Enemy.prototype.constructor = Enemy;
+var CoinStar_proto = Object.create(Phaser.Sprite.prototype);
+CoinStar.prototype = CoinStar_proto;
+CoinStar.prototype.constructor = CoinStar;
 
 /* --- end generated code --- */
-
-
 // -- user code here --
-
-Enemy.prototype.myCreate = function (){
-		
-
-	
-};
-
-Enemy.prototype.update = function () {
-	
-	
-
-};

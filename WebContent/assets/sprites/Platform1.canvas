@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "Player",
+    "className": "Platform1",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -33,30 +33,26 @@
   },
   "world": {
     "type": "group",
-    "id": "10a77e88-5b68-4abb-a8f5-3a030231b236",
+    "id": "62cf2d4c-73db-4d57-848a-de18a83eaaf1",
     "info": {
-      "editorName": "player",
+      "editorName": "Platform1",
       "setAll": [],
       "children": [{
         "type": "image",
-        "id": "57390a5d-a3e7-4561-9b27-25c83426cf28",
+        "id": "ac38b2a5-5379-49f0-9487-859755485bca",
         "asset": "0",
         "info": {
-          "editorName": "player1",
-          "editorField": true,
-          "pivot.x": 0.5,
-          "pivot.y": 0.5,
-          "anchor.x": 0.5,
-          "anchor.y": 0.5
+          "editorName": "platformTipo1",
+          "editorField": true
         }
       }]
     }
   },
   "type": "SPRITE",
   "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "player",
-    "asset": "player1"
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "platformTipo1"
   }},
   "prefab-table": {}
 }

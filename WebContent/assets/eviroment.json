@@ -16,10 +16,32 @@
       "key": "grass",
       "url": "assets/sprites/grass.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "platformTipo1",
+      "url": "assets/sprites/platformTipo1.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Platform1",
+      "url": "assets/sprites/Platform1.js"
+    },
+    {
+      "type": "image",
+      "key": "coinStar",
+      "url": "assets/sprites/coinStar.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "CoinStar",
+      "url": "assets/sprites/CoinStar.js"
     }
   ],
   "meta": {
-    "generated": "1562895535533",
+    "generated": "1563289963801",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

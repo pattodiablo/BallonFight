@@ -25,7 +25,7 @@ Level.prototype.init = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
-	this.stage.backgroundColor = '#65edff';
+	this.stage.backgroundColor = '#eff0ed';
 	
 };
 
@@ -38,34 +38,48 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-	this.add.sprite(-161.0, 844.0, 'grass');
+	this.add.sprite(-160.0, 807.0, 'grass');
 	
-	this.add.text(16.0, 10.0, 'Ballonaizer', {"font":"bold 40px Arial","fill":"#f9fcff"});
-	
-	var _player = new Player(this.game, 290.0, 705.0);
+	var _player = new Player(this.game, 288.0, 704.0);
 	this.add.existing(_player);
 	
 	var _Plataformas = this.add.group();
 	
-	var _floor = new Piso(this.game, -237.0, 527.0);
-	_Plataformas.add(_floor);
-	
-	var _floor1 = new Piso(this.game, 324.0, 935.0);
+	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _floor2 = new Piso(this.game, 935.0, 207.0);
-	_Plataformas.add(_floor2);
+	var _platformTipo = new Platform1(this.game, 384.0, 672.0);
+	_Plataformas.add(_platformTipo);
+	
+	var _platformTipo1 = new Platform1(this.game, -32.0, 192.0);
+	_Plataformas.add(_platformTipo1);
+	
+	var _platformTipo2 = new Platform1(this.game, 544.0, 384.0);
+	_Plataformas.add(_platformTipo2);
 	
 	var _Enemies = this.add.group();
 	
-	var _enemy = new Enemy(this.game, 155.0, 408.0);
-	_Enemies.add(_enemy);
+	var _enemy3 = new Enemy(this.game, 44.0, 104.0);
+	_Enemies.add(_enemy3);
 	
-	var _enemy = new Enemy(this.game, 426.0, 86.0);
-	_Enemies.add(_enemy);
+	var _EnemyL2 = this.add.group();
 	
-	var _enemy = new Enemy(this.game, 518.0, 812.0);
-	_Enemies.add(_enemy);
+	var _enemy4 = new Enemy2(this.game, 554.0, 295.0);
+	_EnemyL2.add(_enemy4);
+	
+	var _Coins = this.add.group();
+	
+	var _coinStar3 = new CoinStar(this.game, 229.0, 152.0);
+	_Coins.add(_coinStar3);
+	
+	var _coinStar2 = new CoinStar(this.game, 510.0, 632.0);
+	_Coins.add(_coinStar2);
+	
+	var _coinStar1 = new CoinStar(this.game, 391.0, 632.0);
+	_Coins.add(_coinStar1);
+	
+	var _coinStar = new CoinStar(this.game, 544.0, 344.0);
+	_Coins.add(_coinStar);
 	
 	
 	
@@ -73,13 +87,18 @@ Level.prototype.create = function () {
 	
 	this.fPlayer = _player;
 	this.fPlataformas = _Plataformas;
-	this.fFloor = _floor;
 	this.fFloor1 = _floor1;
-	this.fFloor2 = _floor2;
+	this.fPlatformTipo = _platformTipo;
+	this.fPlatformTipo1 = _platformTipo1;
+	this.fPlatformTipo2 = _platformTipo2;
 	this.fEnemies = _Enemies;
-	this.fEnemy = _enemy;
-	this.fEnemy = _enemy;
-	this.fEnemy = _enemy;
+	this.fEnemy3 = _enemy3;
+	this.fEnemyL2 = _EnemyL2;
+	this.fEnemy4 = _enemy4;
+	this.fCoinStar3 = _coinStar3;
+	this.fCoinStar2 = _coinStar2;
+	this.fCoinStar1 = _coinStar1;
+	this.fCoinStar = _coinStar;
 		this.myCreate();
 	
 	
@@ -92,7 +111,7 @@ Level.prototype.myInit = function() {
 };
 
 Level.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level1", this.fPlayer, this.fPlataformas, this.fEnemies);
+	this.behavior = new PlatformerBehavior(this, "Level1", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2);
 };
 
 Level.prototype.update = function () {

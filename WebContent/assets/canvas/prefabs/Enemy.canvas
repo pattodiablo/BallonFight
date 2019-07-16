@@ -46,7 +46,8 @@
           "editorName": "enemy",
           "editorField": true,
           "pivot.x": 0.5,
-          "pivot.y": 0.5
+          "pivot.y": 0.5,
+          "data": "{game:this.game.state﻿.getCurrentState()}"
         }
       }]
     }

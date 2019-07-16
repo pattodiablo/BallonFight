@@ -10,10 +10,21 @@
       "type": "script",
       "key": "Enemy1",
       "url": "assets/canvas/prefabs/Enemy.js"
+    },
+    {
+      "type": "image",
+      "key": "enemy2",
+      "url": "assets/sprites/enemy2.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Enemy2",
+      "url": "assets/canvas/prefabs/Enemy2.js"
     }
   ],
   "meta": {
-    "generated": "1562895651317",
+    "generated": "1563289963801",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "Player",
+    "className": "Enemy2",
     "sceneWidth": 640,
     "sceneHeight": 360,
     "generateOnSave": true,
@@ -33,30 +33,27 @@
   },
   "world": {
     "type": "group",
-    "id": "10a77e88-5b68-4abb-a8f5-3a030231b236",
+    "id": "517c0766-e633-4009-b32a-bd550878956b",
     "info": {
-      "editorName": "player",
+      "editorName": "Enemy2",
       "setAll": [],
       "children": [{
         "type": "image",
-        "id": "57390a5d-a3e7-4561-9b27-25c83426cf28",
+        "id": "20607b70-a050-43a2-8fb1-b07d429f1d7c",
         "asset": "0",
         "info": {
-          "editorName": "player1",
+          "editorName": "enemy2",
           "editorField": true,
-          "pivot.x": 0.5,
-          "pivot.y": 0.5,
-          "anchor.x": 0.5,
-          "anchor.y": 0.5
+          "data": "{game:this.game.state﻿.getCurrentState()}"
         }
       }]
     }
   },
   "type": "SPRITE",
   "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "player",
-    "asset": "player1"
+    "file": "WebContent/assets/enemy.json",
+    "section": "Enemy",
+    "asset": "enemy2"
   }},
   "prefab-table": {}
 }
