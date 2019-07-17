@@ -38,10 +38,16 @@
       "type": "script",
       "key": "CoinStar",
       "url": "assets/sprites/CoinStar.js"
+    },
+    {
+      "type": "image",
+      "key": "background",
+      "url": "assets/sprites/background.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1563289963801",
+    "generated": "1563380773779",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

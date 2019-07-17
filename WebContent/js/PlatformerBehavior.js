@@ -1,5 +1,5 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins) {
 	// init
 
 		this._state = state;
@@ -12,13 +12,13 @@
 	// player
 		this._player = player;
 		this._plataformas= plataformas;
+		this._coins = coins;
 		this._enemigos = enemigos;
 		this._enemigos2 = enemigos2;
 		this.maxPower = 200;
+
 		this._state.camera.follow(this._player);
 		this._state.camera.onFadeComplete.add(this.resetLevel, this);
-
-
 	
 
 		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 1;  
@@ -37,6 +37,13 @@
 		this._velocity = this._player.body.velocity;
 		this._state.physics.arcade.enable(this._player);
 
+	//coins
+
+
+		this._arcade.enable(this._coins, true);
+		this._coins.setAll("body.allowGravity", false);
+		this._coins.setAll("body.immovable", true);
+		this._coins.setAll("body.collideWorldBounds", true);
 		
 	//enemigos1	
 		
@@ -91,8 +98,7 @@
 			}
 
 
-			console.log(this.Dy);
-				console.log(this.Dx);
+		
 			
 	
 		if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
@@ -272,14 +278,15 @@
 	}
 
 	PlatformerBehavior.prototype.resetLevel = function() {
-		console.log(this._state.game);
-		
-this._state.game.state.start("Level");
+	
+		this._state.game.state.start("Level");
+
 		}
 
 	PlatformerBehavior.prototype.update = function() {
 
 		this._arcade.collide(this._player, this._plataformas);
+		this._arcade.collide(this._player, this._coins, coining);
 		this._arcade.collide(this._enemigos, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos2);
@@ -289,31 +296,23 @@ this._state.game.state.start("Level");
 		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
 
 
+function coining(player, coin)	{
+	coin.visible = false;
+	coin.destroy();
+	console.log("wanna coin");
+
+}
 		function touchingEnemy(player, enemy){
 
-			player.visible = false;
-	
-		
-			if(enemy.body.touching.up){
-				
-				//enemy.visible = false;
-
-				console.log("kill the bastard");
-
-			}else{
-
-
+				player.visible = false;
 				player.data.game.camera.fade(0x000000, 2000);
-				player.destroy();
-				console.log();
-			}
-			
+				player.destroy();	
 
 		}
 
 		function bounceAbit(enemy, platform){
 			enemy.body.bounce.set(0.8);
-			console.log("collinding platform");
+			
 		}
 
 		//reducción de velocidad de player en eje x

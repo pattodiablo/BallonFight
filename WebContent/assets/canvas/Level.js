@@ -38,6 +38,8 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
+	this.add.sprite(0.0, 0.0, 'background');
+	
 	this.add.sprite(-160.0, 807.0, 'grass');
 	
 	var _player = new Player(this.game, 288.0, 704.0);
@@ -48,14 +50,11 @@ Level.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 384.0, 672.0);
+	var _platformTipo = new Platform1(this.game, 189.0, 461.0);
 	_Plataformas.add(_platformTipo);
 	
-	var _platformTipo1 = new Platform1(this.game, -32.0, 192.0);
+	var _platformTipo1 = new Platform1(this.game, 358.0, 153.0);
 	_Plataformas.add(_platformTipo1);
-	
-	var _platformTipo2 = new Platform1(this.game, 544.0, 384.0);
-	_Plataformas.add(_platformTipo2);
 	
 	var _Enemies = this.add.group();
 	
@@ -69,17 +68,20 @@ Level.prototype.create = function () {
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar3 = new CoinStar(this.game, 229.0, 152.0);
-	_Coins.add(_coinStar3);
-	
-	var _coinStar2 = new CoinStar(this.game, 510.0, 632.0);
+	var _coinStar2 = new CoinStar(this.game, 308.0, 396.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar1 = new CoinStar(this.game, 391.0, 632.0);
+	var _coinStar1 = new CoinStar(this.game, 200.0, 396.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar = new CoinStar(this.game, 544.0, 344.0);
+	var _coinStar = new CoinStar(this.game, 412.0, 397.0);
 	_Coins.add(_coinStar);
+	
+	var _coinStar3 = new CoinStar(this.game, 363.0, 87.0);
+	_Coins.add(_coinStar3);
+	
+	var _coinStar4 = new CoinStar(this.game, 501.0, 89.0);
+	_Coins.add(_coinStar4);
 	
 	
 	
@@ -90,15 +92,16 @@ Level.prototype.create = function () {
 	this.fFloor1 = _floor1;
 	this.fPlatformTipo = _platformTipo;
 	this.fPlatformTipo1 = _platformTipo1;
-	this.fPlatformTipo2 = _platformTipo2;
 	this.fEnemies = _Enemies;
 	this.fEnemy3 = _enemy3;
 	this.fEnemyL2 = _EnemyL2;
 	this.fEnemy4 = _enemy4;
-	this.fCoinStar3 = _coinStar3;
+	this.fCoins = _Coins;
 	this.fCoinStar2 = _coinStar2;
 	this.fCoinStar1 = _coinStar1;
 	this.fCoinStar = _coinStar;
+	this.fCoinStar3 = _coinStar3;
+	this.fCoinStar4 = _coinStar4;
 		this.myCreate();
 	
 	
@@ -111,7 +114,7 @@ Level.prototype.myInit = function() {
 };
 
 Level.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level1", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2);
+	this.behavior = new PlatformerBehavior(this, "Level1", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins);
 };
 
 Level.prototype.update = function () {
