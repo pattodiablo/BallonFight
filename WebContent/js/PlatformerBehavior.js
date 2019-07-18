@@ -338,7 +338,7 @@ function coining(player, coin)	{
 		function touchingEnemy(player, enemy){
 
 				player.visible = false;
-				player.data.game.camera.fade(0x000000, 2000);
+				player.data.game.camera.fade(0x000000, 1000);
 				player.destroy();	
 
 		}
