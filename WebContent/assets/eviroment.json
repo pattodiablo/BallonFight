@@ -44,10 +44,27 @@
       "key": "background",
       "url": "assets/sprites/background.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "pauseBtn",
+      "url": "assets/sprites/pauseBtn.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "introScene",
+      "url": "assets/canvas/IntroScene.js"
+    },
+    {
+      "type": "image",
+      "key": "introScene1",
+      "url": "assets/sprites/introScene.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1563380773779",
+    "generated": "1563483281843",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

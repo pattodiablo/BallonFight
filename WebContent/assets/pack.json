@@ -10,10 +10,21 @@
       "type": "script",
       "key": "player2",
       "url": "assets/canvas/prefabs/Player.js"
+    },
+    {
+      "type": "image",
+      "key": "vida",
+      "url": "assets/sprites/vida.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Vida",
+      "url": "assets/canvas/prefabs/Vida.js"
     }
   ],
   "meta": {
-    "generated": "1563289963802",
+    "generated": "1563482703926",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

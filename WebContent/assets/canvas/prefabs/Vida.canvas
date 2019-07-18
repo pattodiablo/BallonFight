@@ -1,0 +1,54 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Vida",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "62283b13-31c9-4cb8-a19c-88da211dc539",
+    "info": {
+      "editorName": "Vida",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "622deeb0-bb80-4474-924f-b72f740ed0d1",
+        "asset": "0",
+        "info": {"editorName": "vida"}
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "player",
+    "asset": "vida"
+  }},
+  "prefab-table": {}
+}

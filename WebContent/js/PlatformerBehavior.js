@@ -1,10 +1,12 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones) {
 	// init
 
 		this._state = state;
 		this._nextLevel = nextLevel;
-	
+		this._vidas = vidas;
+
+		
 	// physics
 		this._arcade = state.game.physics.arcade;
 		this._arcade.gravity.y = 90;
@@ -13,13 +15,15 @@
 		this._player = player;
 		this._plataformas= plataformas;
 		this._coins = coins;
+
+
+		this._corazones = corazones;
 		this._enemigos = enemigos;
 		this._enemigos2 = enemigos2;
 		this.maxPower = 200;
-
 		this._state.camera.follow(this._player);
 		this._state.camera.onFadeComplete.add(this.resetLevel, this);
-	
+		
 
 		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 1;  
 		this.AirFriction = 0.8;	
@@ -65,6 +69,34 @@
 		this._plataformas.setAll("body.allowGravity", false);
 		this._plataformas.setAll("body.immovable", true);
 		this._plataformas.setAll("body.friccion", false);	
+
+
+	//manejo de vidas
+
+
+		//console.log("lifes remaing " + this._vidas);
+		if(this._vidas>=0){
+
+		
+		this._corazones.forEach(function(corazon) {
+			
+			corazon.visible=false;
+
+		}, this);
+
+
+		for(var i = 0; i<this._vidas; i++ ){
+
+			this._corazones.children[i].visible=true;
+		}
+		
+		}else{
+
+		this._state.game.state.start("IntroScene");
+
+			//console.log("game over play again");
+		}		
+
 
 	// touchScreen
 		
@@ -279,14 +311,15 @@
 
 	PlatformerBehavior.prototype.resetLevel = function() {
 	
-		this._state.game.state.start("Level");
+		this._vidas--;
+		this._state.game.state.restart("Level", false, this._vidas);
 
 		}
 
 	PlatformerBehavior.prototype.update = function() {
 
 		this._arcade.collide(this._player, this._plataformas);
-		this._arcade.collide(this._player, this._coins, coining);
+		this._arcade.overlap(this._player, this._coins, coining);
 		this._arcade.collide(this._enemigos, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos2);

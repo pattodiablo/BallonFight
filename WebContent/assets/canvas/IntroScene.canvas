@@ -1,0 +1,62 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "IntroScene",
+    "sceneWidth": 640,
+    "sceneHeight": 960,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "\tthis.myCreate();"
+  },
+  "stateSettings": {
+    "scaleMode": "SHOW_ALL",
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "de847269-0245-4b1c-9222-9e77dd654676",
+    "info": {
+      "editorName": "introScene",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "c6fca6e9-eaa9-44c4-828e-1d651247adde",
+        "asset": "0",
+        "info": {
+          "editorName": "introScene1",
+          "editorField": true
+        }
+      }]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "introScene1"
+  }},
+  "prefab-table": {}
+}
