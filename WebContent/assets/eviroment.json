@@ -61,10 +61,27 @@
       "key": "introScene1",
       "url": "assets/sprites/introScene.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "goverScene",
+      "url": "assets/sprites/goverScene.png",
+      "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "goverScene1",
+      "url": "assets/canvas/goverScene.js"
+    },
+    {
+      "type": "image",
+      "key": "greatJobScreen",
+      "url": "assets/sprites/greatJobScreen.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1563483281843",
+    "generated": "1563552560445",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

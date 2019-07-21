@@ -1,0 +1,62 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "goverScene",
+    "sceneWidth": 640,
+    "sceneHeight": 960,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "\tthis.myCreate();"
+  },
+  "stateSettings": {
+    "scaleMode": "SHOW_ALL",
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "08ae448a-47f4-468e-bf95-6ad416810e40",
+    "info": {
+      "editorName": "goverScene",
+      "setAll": [],
+      "children": [{
+        "type": "image",
+        "id": "3ac10591-9143-4065-9efa-034d89186d81",
+        "asset": "0",
+        "info": {
+          "editorName": "goverScene1",
+          "editorField": true
+        }
+      }]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "goverScene"
+  }},
+  "prefab-table": {}
+}

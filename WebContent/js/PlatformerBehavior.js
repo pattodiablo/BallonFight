@@ -1,11 +1,12 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen) {
 	// init
 
 		this._state = state;
 		this._nextLevel = nextLevel;
 		this._vidas = vidas;
-
+		this._winScreen = winScreen;
+		this._playing = true;
 		
 	// physics
 		this._arcade = state.game.physics.arcade;
@@ -91,8 +92,8 @@
 		}
 		
 		}else{
-
-		this._state.game.state.start("IntroScene");
+		this._state.game.state.start("GoverScene");
+		//this._state.game.state.start("IntroScene");
 
 			//console.log("game over play again");
 		}		
@@ -307,7 +308,20 @@
 
   		}, this);
   		
-	}
+//pantalla de winning
+
+  		this.winerScreen = new Phaser.Signal();
+			
+		this.winerScreen.addOnce(this.winScreen, this);
+
+
+		}
+
+	PlatformerBehavior.prototype.winScreen = function() {
+		console.log("im here pantalla");
+	this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true)
+		
+		}
 
 	PlatformerBehavior.prototype.resetLevel = function() {
 	
@@ -316,9 +330,20 @@
 
 		}
 
-	PlatformerBehavior.prototype.update = function() {
+	PlatformerBehavior.prototype.NextLevel = function() {
+	
+		this._state.game.state.start("Level2", true, true, this._vidas);
+		
 
-		this._arcade.collide(this._player, this._plataformas);
+		}
+
+
+	PlatformerBehavior.prototype.update = function() {
+this._arcade.collide(this._player, this._plataformas);
+
+if(this._playing ){
+
+		
 		this._arcade.overlap(this._player, this._coins, coining);
 		this._arcade.collide(this._enemigos, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos);
@@ -329,17 +354,50 @@
 		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
 
 
-function coining(player, coin)	{
-	coin.visible = false;
-	coin.destroy();
-	console.log("wanna coin");
+}else{
 
+	this._enemigos2.forEach(function(enemy) { 	
+		enemy.visible = false;
+		//enemy.body.collide = false;
+
+	}, this);
+
+
+	this._enemigos.forEach(function(enemy) { 	
+		enemy.visible = false;
+	//	enemy.body.collide = false;
+
+	}, this);
 }
+
+		if(this._coins.length <= 0 ){
+
+		
+
+			this.winerScreen.dispatch();
+			this._playing = false;
+
+			this._state.time.events.loop(3000, this.NextLevel, this );
+			
+
+		}else{
+
+
+		}
+
+		function coining(player, coin)	{
+
+			coin.visible = false;
+			coin.destroy();
+			console.log("wanna coin");
+
+		}
+
 		function touchingEnemy(player, enemy){
 
-				player.visible = false;
-				player.data.game.camera.fade(0x000000, 1000);
-				player.destroy();	
+			player.visible = false;
+			player.data.game.camera.fade(0x000000, 1000);
+			player.destroy();	
 
 		}
 
@@ -357,7 +415,7 @@ function coining(player, coin)	{
 			this.Dx=0;
 		}
 		
-	this._velocity.x=this.Dx*this.dirX;
+		this._velocity.x=this.Dx*this.dirX;
 	
 	
 

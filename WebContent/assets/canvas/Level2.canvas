@@ -1,7 +1,7 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "Level",
+    "className": "Level2",
     "sceneWidth": 640,
     "sceneHeight": 960,
     "generateOnSave": true,
@@ -142,16 +142,61 @@
               {
                 "type": "prefab",
                 "prefab": "2",
-                "id": "dc5b8486-3989-4ad7-952d-33451fa210c7",
+                "id": "16dd43b6-1a10-49f7-bcb6-7d2213f4cbe9",
                 "asset-ref": {
                   "file": "WebContent/assets/eviroment.json",
                   "section": "Ground",
                   "asset": "coinStar"
                 },
                 "info": {
-                  "editorName": "coinStar5",
-                  "x": 206,
-                  "y": 857
+                  "editorName": "coinStar",
+                  "x": 308,
+                  "y": 441
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "70dc0494-1318-4bcf-a17c-21fc3aa14828",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "coinStar"
+                },
+                "info": {
+                  "editorName": "coinStar1",
+                  "x": 423,
+                  "y": 441
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "21d11b1e-2723-4a29-ac43-a411862a7fda",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "coinStar"
+                },
+                "info": {
+                  "editorName": "coinStar2",
+                  "x": 378,
+                  "y": 87
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "5d5b4449-9427-410a-be91-f6fdce03145c",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "coinStar"
+                },
+                "info": {
+                  "editorName": "coinStar3",
+                  "x": 552,
+                  "y": 85
                 }
               }
             ]
