@@ -1,0 +1,11 @@
+{
+  "spritemap": {"coin": {
+    "start": 0,
+    "end": 0.339592
+  }},
+  "resources": [
+    "soundFx.wav",
+    "soundFx.ogg",
+    "soundFx.mp3"
+  ]
+}

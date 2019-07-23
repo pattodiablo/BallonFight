@@ -9,6 +9,8 @@
 /**
  * Boot.
  */
+
+ 
 function Boot() {
 	
 	Phaser.State.call(this);
@@ -32,6 +34,8 @@ Boot.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	
+	this.myPreload();
+	
 };
 
 Boot.prototype.create = function () {
@@ -48,9 +52,13 @@ Boot.prototype.create = function () {
 
 /* --- end generated code --- */
 // -- user code here --
+Boot.prototype.myPreload = function () {
+
+};
 
 Boot.prototype.myInit = function () {
 	console.log("Boot");
+	
 	this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
 	this.scale.setUserScale(0.5, 0.5, 0, 0);
 };

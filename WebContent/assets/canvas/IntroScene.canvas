@@ -20,7 +20,8 @@
     ],
     "showGrid": false,
     "create_after": "\tthis.myCreate();",
-    "state_init_after": "this.myInit();"
+    "state_init_after": "this.myInit();",
+    "state_preload_after": "this.myPreload();"
   },
   "stateSettings": {
     "scaleMode": "USER_SCALE",

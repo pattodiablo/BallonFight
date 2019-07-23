@@ -325,10 +325,7 @@
 						this.enemyPower2Y=0;	
 							//console.log("jugador en cuadrante 4");
 						}
-				}
-
-
-				
+				}	
 
 				enemy.body.velocity.x=this.enemyPowerX2*this.enemyDir2;
 				enemy.body.velocity.y=-this.enemyPowerY2;
@@ -361,12 +358,20 @@
 		};
 
 	PlatformerBehavior.prototype.NextLevel = function() {
-	
-		this._state.game.state.start(this._nextLevel, true, true, this._vidas);
+		
+		this._state.camera.onFadeComplete.add(nextL, this);
+
+		this._player.game.camera.fade(0x000000, 500);
+
+		function nextL(){
+			this._state.game.state.start(this._nextLevel, true, true, this._vidas);
+		};
+		
 		
 
 		};
 
+	
 
 	PlatformerBehavior.prototype.update = function() {
 	this._arcade.collide(this._player, this._plataformas);
