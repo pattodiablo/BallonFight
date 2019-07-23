@@ -1,5 +1,5 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen, pausebtn) {
 	// init
 
 		this._state = state;
@@ -10,7 +10,7 @@
 		
 	// physics
 		this._arcade = state.game.physics.arcade;
-		this._arcade.gravity.y = 90;
+		this._arcade.gravity.y = 120;
 
 	// player
 		this._player = player;
@@ -25,8 +25,35 @@
 		this._state.camera.follow(this._player);
 		this._state.camera.onFadeComplete.add(this.resetLevel, this);
 		
+		this._pauseBtn = pausebtn;
+		this._pauseBtn.inputEnabled = true;
 
-		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 1;  
+		//manejo de boton de pausa
+
+		this._pauseBtn.events.onInputUp.add(function(pointer) {
+		console.log("pause working");
+
+				this._state.game.paused = true;
+				
+			
+		}, this);  
+
+  		this._state.game.input.onDown.add(unpause, this);
+
+  		  function unpause(event){
+			
+			if(this._state.game.paused){
+				console.log("not pausing");
+				this._state.game.paused = false;
+
+			}
+
+  		  }
+
+
+	//frinccion del aire	
+
+		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 0.5;  
 		this.AirFriction = 0.8;	
 	
 		
@@ -126,13 +153,16 @@
 
 			if(this.Dy >=this.maxPower){
 
-				this.Dy = this.maxPower/2;
+				this.Dy = this.maxPower/1.5;
 
 			}
 
-
-		
+    	this._state.game.input.onTap.add(function(pointer){
+    		console.log("tapping");
+ 			this._velocity.y = -100;
+    	}, this);	
 			
+
 	
 		if(this.swipeCoordX2 < this.swipeCoordX - this.swipeMinDistance){            
 		
@@ -161,7 +191,7 @@
 		
 		}   
 
-	 	this.veloX = 100;
+	 	this.veloX = 150;
 
 		}, this);
 
@@ -251,7 +281,7 @@
 
 				//console.log(this.CurrentPlayerY - enemy.y);
 				this.enemyPowerX2 = Math.abs(this.CurrentPlayerX - enemy.x);
-				this.enemyDir2 = Math.sign(this.CurrentPlayerX - enemy.x)
+				this.enemyDir2 = Math.sign(this.CurrentPlayerX - enemy.x);
 				
 				if(enemyPowerX2 > 50){
 					enemyPowerX2 = 50;
@@ -319,29 +349,29 @@
 
 	PlatformerBehavior.prototype.winScreen = function() {
 		console.log("im here pantalla");
-	this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true)
+	this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
 		
-		}
+		};
 
 	PlatformerBehavior.prototype.resetLevel = function() {
 	
 		this._vidas--;
 		this._state.game.state.restart("Level", false, this._vidas);
 
-		}
+		};
 
 	PlatformerBehavior.prototype.NextLevel = function() {
 	
-		this._state.game.state.start("Level2", true, true, this._vidas);
+		this._state.game.state.start(this._nextLevel, true, true, this._vidas);
 		
 
-		}
+		};
 
 
 	PlatformerBehavior.prototype.update = function() {
-this._arcade.collide(this._player, this._plataformas);
+	this._arcade.collide(this._player, this._plataformas);
 
-if(this._playing ){
+	if(this._playing ){
 
 		
 		this._arcade.overlap(this._player, this._coins, coining);
@@ -354,7 +384,8 @@ if(this._playing ){
 		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
 
 
-}else{
+	
+	}else{
 
 	this._enemigos2.forEach(function(enemy) { 	
 		enemy.visible = false;

@@ -22,9 +22,11 @@ IntroScene.prototype.constructor = IntroScene;
 
 IntroScene.prototype.init = function () {
 	
-	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
+	
+	this.myInit();
 	
 };
 
@@ -42,14 +44,22 @@ IntroScene.prototype.create = function () {
 	// fields
 	
 	this.fIntroScene1 = _introScene1;
-	this.myCreate();
+		this.myCreate();
 	
 };
 
 /* --- end generated code --- */
 // -- user code here --
-IntroScene.prototype.myCreate = function () {
 
+IntroScene.prototype.myInit = function () {
+	console.log("IntroScene");
+	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	
+	
+};
+IntroScene.prototype.myCreate = function () {
+	//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	
 	this.fIntroScene1.inputEnabled = true;
 	this.fIntroScene1.events.onInputDown.add﻿(this.iniciarJuego, this);
 	
@@ -57,8 +67,6 @@ IntroScene.prototype.myCreate = function () {
 IntroScene.prototype.iniciarJuego = function () {
 	
 	console.log("wanna iniciar");
-	
-	
 	this.state.game.state.start("Level", true, true, 3);
 };
 

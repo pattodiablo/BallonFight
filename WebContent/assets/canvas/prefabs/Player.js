@@ -18,7 +18,7 @@ function Player(aGame, aX, aY, aKey, aFrame) {
 	Phaser.Sprite.call(this, aGame, aX, aY, aKey || 'player1', aFrame == undefined || aFrame == null? null : aFrame);
 	this.pivot.set(0.5, 0.5);
 	this.anchor.set(0.5, 0.5);
-	this.data = 	this.data = {game:this.game.state﻿.getCurrentState()};;
+	this.data = {game:this.game.state﻿.getCurrentState()};
 	
 	// fields
 	

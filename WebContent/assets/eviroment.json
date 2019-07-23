@@ -78,10 +78,21 @@
       "key": "greatJobScreen",
       "url": "assets/sprites/greatJobScreen.png",
       "overwrite": false
+    },
+    {
+      "type": "script",
+      "key": "Boot",
+      "url": "assets/canvas/Boot.js"
+    },
+    {
+      "type": "image",
+      "key": "emptyBg",
+      "url": "assets/sprites/emptyBg.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1563552560445",
+    "generated": "1563817304066",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

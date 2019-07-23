@@ -26,10 +26,10 @@ Level.prototype.init = function (vidas) {
 	console.log(vidas);
 	vidasTotales = vidas;
 	
-	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
-	this.stage.backgroundColor = '#eff0ed';
+	
+	this.myInit();
 	
 };
 
@@ -51,19 +51,19 @@ Level.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 189.0, 507.0);
+	var _platformTipo = new Platform1(this.game, 189.0, 564.0);
 	_Plataformas.add(_platformTipo);
-	
-	var _platformTipo1 = new Platform1(this.game, 358.0, 153.0);
-	_Plataformas.add(_platformTipo1);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar4 = new CoinStar(this.game, 196.0, 441.0);
+	var _coinStar4 = new CoinStar(this.game, 209.0, 499.0);
 	_Coins.add(_coinStar4);
 	
-	var _coinStar5 = new CoinStar(this.game, 206.0, 857.0);
+	var _coinStar5 = new CoinStar(this.game, 308.0, 500.0);
 	_Coins.add(_coinStar5);
+	
+	var _coinStar = new CoinStar(this.game, 413.0, 500.0);
+	_Coins.add(_coinStar);
 	
 	var _Enemies = this.add.group();
 	
@@ -71,9 +71,6 @@ Level.prototype.create = function () {
 	_Enemies.add(_enemy1);
 	
 	var _EnemyL2 = this.add.group();
-	
-	var _enemy = new Enemy2(this.game, 430.0, 64.0);
-	_EnemyL2.add(_enemy);
 	
 	var _lives = this.add.group();
 	
@@ -86,12 +83,12 @@ Level.prototype.create = function () {
 	var _vida2 = new Vida(this.game, 158.0, 20.0);
 	_lives.add(_vida2);
 	
-	this.add.sprite(555.0, 9.0, 'pauseBtn', null, _lives);
-	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
 	
 	var _greatJobScreen = this.add.sprite(0.0, -960.0, 'greatJobScreen');
+	
+	var _pauseBtn = this.add.sprite(555.0, 9.0, 'pauseBtn');
 	
 	
 	
@@ -100,17 +97,17 @@ Level.prototype.create = function () {
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
 	this.fPlatformTipo = _platformTipo;
-	this.fPlatformTipo1 = _platformTipo1;
 	this.fCoins = _Coins;
 	this.fCoinStar4 = _coinStar4;
 	this.fCoinStar5 = _coinStar5;
+	this.fCoinStar = _coinStar;
 	this.fEnemies = _Enemies;
 	this.fEnemy1 = _enemy1;
 	this.fEnemyL2 = _EnemyL2;
-	this.fEnemy = _enemy;
 	this.fLives = _lives;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
+	this.fPauseBtn = _pauseBtn;
 		this.myCreate();
 	
 	
@@ -118,10 +115,15 @@ Level.prototype.create = function () {
 
 /* --- end generated code --- */
 
-
-
+Level.prototype.myInit = function () {
+	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+};
 Level.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen);
+	
+	
+	
+	
+	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn);
 };
 
 Level.prototype.update = function () {

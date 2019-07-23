@@ -51,28 +51,31 @@ Level2.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 189.0, 507.0);
+	var _platformTipo = new Platform1(this.game, 189.0, 569.0);
 	_Plataformas.add(_platformTipo);
 	
-	var _platformTipo1 = new Platform1(this.game, 358.0, 153.0);
+	var _platformTipo1 = new Platform1(this.game, 192.0, 216.0);
 	_Plataformas.add(_platformTipo1);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar4 = new CoinStar(this.game, 196.0, 441.0);
+	var _coinStar4 = new CoinStar(this.game, 196.0, 504.0);
 	_Coins.add(_coinStar4);
 	
-	var _coinStar = new CoinStar(this.game, 308.0, 441.0);
+	var _coinStar = new CoinStar(this.game, 308.0, 504.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 423.0, 441.0);
+	var _coinStar1 = new CoinStar(this.game, 423.0, 504.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 378.0, 87.0);
+	var _coinStar2 = new CoinStar(this.game, 202.0, 153.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 552.0, 85.0);
+	var _coinStar3 = new CoinStar(this.game, 313.0, 153.0);
 	_Coins.add(_coinStar3);
+	
+	var _coinStar5 = new CoinStar(this.game, 427.0, 153.0);
+	_Coins.add(_coinStar5);
 	
 	var _Enemies = this.add.group();
 	
@@ -81,7 +84,7 @@ Level2.prototype.create = function () {
 	
 	var _EnemyL2 = this.add.group();
 	
-	var _enemy = new Enemy2(this.game, 430.0, 64.0);
+	var _enemy = new Enemy2(this.game, 369.0, 66.0);
 	_EnemyL2.add(_enemy);
 	
 	var _lives = this.add.group();
@@ -95,12 +98,12 @@ Level2.prototype.create = function () {
 	var _vida2 = new Vida(this.game, 158.0, 20.0);
 	_lives.add(_vida2);
 	
-	this.add.sprite(555.0, 9.0, 'pauseBtn', null, _lives);
-	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
 	
 	var _greatJobScreen = this.add.sprite(0.0, -960.0, 'greatJobScreen');
+	
+	var _pauseBtn = this.add.sprite(555.0, 9.0, 'pauseBtn');
 	
 	
 	
@@ -116,6 +119,7 @@ Level2.prototype.create = function () {
 	this.fCoinStar1 = _coinStar1;
 	this.fCoinStar2 = _coinStar2;
 	this.fCoinStar3 = _coinStar3;
+	this.fCoinStar5 = _coinStar5;
 	this.fEnemies = _Enemies;
 	this.fEnemy1 = _enemy1;
 	this.fEnemyL2 = _EnemyL2;
@@ -123,7 +127,8 @@ Level2.prototype.create = function () {
 	this.fLives = _lives;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
-	this.myCreate();
+	this.fPauseBtn = _pauseBtn;
+		this.myCreate();
 	
 	
 };
@@ -133,7 +138,7 @@ Level2.prototype.create = function () {
 
 
 Level2.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level3", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen);
+	this.behavior = new PlatformerBehavior(this, "Level", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn);
 };
 
 Level2.prototype.update = function () {

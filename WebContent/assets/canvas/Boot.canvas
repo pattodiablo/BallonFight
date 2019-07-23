@@ -1,31 +1,29 @@
 {
   "canvas-version": 2,
   "settings": {
-    "className": "IntroScene",
+    "className": "Boot",
     "sceneWidth": 640,
     "sceneHeight": 960,
     "generateOnSave": true,
-    "enableStepping": false,
+    "enableStepping": true,
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      0,
-      0,
-      0
+      180,
+      180,
+      180
     ],
     "gridColor": [
       200,
       200,
       200
     ],
-    "showGrid": false,
-    "create_after": "\tthis.myCreate();",
+    "showGrid": true,
+    "create_after": "this.myCreate();",
     "state_init_after": "this.myInit();"
   },
   "stateSettings": {
     "scaleMode": "USER_SCALE",
-    "pageAlignHorizontally": true,
-    "pageAlignVertically": true,
     "stageBackgroundColor": [
       0,
       0,
@@ -38,16 +36,16 @@
   },
   "world": {
     "type": "group",
-    "id": "de847269-0245-4b1c-9222-9e77dd654676",
+    "id": "00a9f146-ba96-40a6-bc9a-cd3582d1da05",
     "info": {
-      "editorName": "introScene",
+      "editorName": "Boot",
       "setAll": [],
       "children": [{
         "type": "image",
-        "id": "c6fca6e9-eaa9-44c4-828e-1d651247adde",
+        "id": "7e81abb8-1c4c-49c5-ba99-9ee0540096ff",
         "asset": "0",
         "info": {
-          "editorName": "introScene1",
+          "editorName": "emptyBg",
           "editorField": true
         }
       }]
@@ -57,7 +55,7 @@
   "asset-table": {"0": {
     "file": "WebContent/assets/eviroment.json",
     "section": "Ground",
-    "asset": "introScene1"
+    "asset": "emptyBg"
   }},
   "prefab-table": {}
 }
