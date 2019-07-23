@@ -39,6 +39,8 @@ Level2.prototype.preload = function () {
 	this.load.pack('Enemy', 'assets/enemy.json');
 	this.load.pack('player', 'assets/pack.json');
 	
+	this.myPreload();
+	
 };
 
 Level2.prototype.create = function () {
@@ -135,10 +137,19 @@ Level2.prototype.create = function () {
 
 /* --- end generated code --- */
 
+Level2.prototype.myPreload = function () {
+	this.load.audio('coin', ['assets/audio/coin.mp3','assets/audio/coin.ogg']);
+};
 
 
 Level2.prototype.myCreate = function () {
-	this.behavior = new PlatformerBehavior(this, "Level", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn);
+	//this.sound.setDecodedCallback('coin', start, this);
+	fxCoin = this.add.audio('coin');
+	fxCoin.allowMultiple = true;
+	fxCoin.addMarker('coin', 0, 1);
+	fxCoin.play('coin');
+	
+	this.behavior = new PlatformerBehavior(this, "Level", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn,fxCoin);
 };
 
 Level2.prototype.update = function () {

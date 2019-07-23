@@ -58,7 +58,7 @@ Boot.prototype.myPreload = function () {
 
 Boot.prototype.myInit = function () {
 	console.log("Boot");
-	
+	this.game.sound.boot();
 	this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
 	this.scale.setUserScale(0.5, 0.5, 0, 0);
 };

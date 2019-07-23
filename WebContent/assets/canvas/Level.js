@@ -34,14 +34,19 @@ Level.prototype.init = function (vidas) {
 };
 
 Level.prototype.preload = function () {
-	
+
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
 	this.load.pack('player', 'assets/pack.json');
+
+	this.myPreload();
 	
 };
 
 Level.prototype.create = function () {
+
+	
+	
 	this.add.sprite(0.0, 0.0, 'background');
 	
 	this.add.sprite(-160.0, 807.0, 'grass');
@@ -115,15 +120,23 @@ Level.prototype.create = function () {
 
 /* --- end generated code --- */
 
+Level.prototype.myPreload = function () {
+	this.load.audio('coin', ['assets/audio/coin.mp3','assets/audio/coin.ogg']);
+};
+
 Level.prototype.myInit = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 };
+
+
 Level.prototype.myCreate = function () {
+	//this.sound.setDecodedCallback('coin', start, this);
+	fxCoin = this.add.audio('coin');
+	fxCoin.allowMultiple = true;
+	fxCoin.addMarker('coin', 0, 1);
+	fxCoin.play('coin');
 	
-	
-	
-	
-	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn);
+	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn,fxCoin);
 };
 
 Level.prototype.update = function () {

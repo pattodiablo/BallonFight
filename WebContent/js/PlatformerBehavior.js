@@ -1,7 +1,8 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen, pausebtn) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen, pausebtn, sounds) {
 	// init
-
+		this._sounds = sounds;
+	//	this._sounds.play('coin');
 		this._state = state;
 		this._nextLevel = nextLevel;
 		this._vidas = vidas;
@@ -10,18 +11,19 @@
 		
 	// physics
 		this._arcade = state.game.physics.arcade;
-		this._arcade.gravity.y = 120;
+		this._arcade.gravity.y = 200;
 
 	// player
 		this._player = player;
+		this._player.sounds = this._sounds;
 		this._plataformas= plataformas;
 		this._coins = coins;
-
+		
 
 		this._corazones = corazones;
 		this._enemigos = enemigos;
 		this._enemigos2 = enemigos2;
-		this.maxPower = 200;
+		this.maxPower = 300;
 		this._state.camera.follow(this._player);
 		this._state.camera.onFadeComplete.add(this.resetLevel, this);
 		
@@ -159,7 +161,7 @@
 
     	this._state.game.input.onTap.add(function(pointer){
     		console.log("tapping");
- 			this._velocity.y = -100;
+ 			this._velocity.y = -150;
     	}, this);	
 			
 
@@ -191,7 +193,7 @@
 		
 		}   
 
-	 	this.veloX = 150;
+	 	this.veloX = 200;
 
 		}, this);
 
@@ -408,8 +410,6 @@
 
 		if(this._coins.length <= 0 ){
 
-		
-
 			this.winerScreen.dispatch();
 			this._playing = false;
 
@@ -423,6 +423,7 @@
 
 		function coining(player, coin)	{
 
+			player.sounds.play('coin');
 			coin.visible = false;
 			coin.destroy();
 			console.log("wanna coin");
