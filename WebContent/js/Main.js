@@ -17,9 +17,16 @@ window.onload = function() {
 			preload:function(){
 				console.log("paro zona");
 				firstRunLandscape = game.scale.isGameLandscape;
-				game.scale.forceOrientation(false, true);
+				if(game.device.desktop){
+					game.scale.forceOrientation(false, false);
+				}else{
+					game.scale.forceOrientation(false, true);
+					
+				}
+				
 				game.scale.enterIncorrectOrientation.add(handleIncorrect);
 				game.scale.leaveIncorrectOrientation.add(handleCorrect);
+				
 			},
 			create:function(){
 				game.state.start("Boot",true,true);
@@ -38,9 +45,10 @@ window.onload = function() {
 	function handleCorrect(){
 		if(!game.device.desktop){
 			if(firstRunLandscape){
+				
 				gameRatio = window.innerWidth/window.innerHeight;		
 				game.width = Math.ceil(640*gameRatio);
-				game.height = 640;
+				game.height = 960;
 				game.renderer.resize(game.width,game.height);
 				game.state.start("Play");		
 			}

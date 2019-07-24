@@ -1,7 +1,7 @@
 
 	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen, pausebtn, sounds) {
 	// init
-		this._sounds = sounds;
+	
 	//	this._sounds.play('coin');
 		this._state = state;
 		this._nextLevel = nextLevel;
@@ -15,7 +15,8 @@
 
 	// player
 		this._player = player;
-		this._player.sounds = this._sounds;
+		this._player.sounds = sounds;
+		
 		this._plataformas= plataformas;
 		this._coins = coins;
 		
@@ -69,6 +70,7 @@
 		this._player.body.allowGravity = true;
 		this._player.body.collideWorldBounds = true;
 		this._velocity = this._player.body.velocity;
+		this._velocity.y = 0;
 		this._state.physics.arcade.enable(this._player);
 
 	//coins
@@ -132,36 +134,42 @@
 		
 		this._state.input.addPointer();
 
-	
+
+
 		this._state.input.onDown.add(function(pointer) {
 			
+
 			this.swipeCoordX = pointer.clientX;   
-			this.swipeCoordY = pointer.clientY; 
+		
+
 			
 		}, this);   
 
 		this._state.input.onUp.add(function(pointer) { 
 		
 			this.swipeCoordX2 = pointer.clientX;        
-			this.swipeCoordY2 = pointer.clientY;        
+	    
 			
 			this.Dx = Math.abs(this.swipeCoordX - this.swipeCoordX2);
-			this.Dy = Math.abs(this.swipeCoordY - this.swipeCoordY2);
+		
 
 			if(this.Dx >=this.maxPower){
+
 				this.Dx = this.maxPower;
 
 			}
 
-			if(this.Dy >=this.maxPower){
-
-				this.Dy = this.maxPower/1.5;
-
-			}
+			
+			//implementar on input down 
 
     	this._state.game.input.onTap.add(function(pointer){
-    		console.log("tapping");
- 			this._velocity.y = -150;
+    		//console.log("tapping");
+    	
+    		
+    		//this._player.sounds[3].play("playerBlow");
+    		this._player.sounds.fxPblow.play("playerBlow");
+ 			this._velocity.y = -100;
+
     	}, this);	
 			
 
@@ -180,22 +188,13 @@
 	 	
 		}
 	
-		if(this.swipeCoordY2 < this.swipeCoordY - this.swipeMinDistance){
-	
-			this._velocity.y = -this.Dy;
-			//console.log("up");        
 		
-		}
-		if(this.swipeCoordY2 > this.swipeCoordY + this.swipeMinDistance){  
-	
-			this._velocity.y = this.Dy;
-			//console.log("down");        
-		
-		}   
 
 	 	this.veloX = 200;
 
 		}, this);
+
+
 
 		this._enemigos.forEach(function(enemy) { //funcionamiento enemigos tipo 1
     		
@@ -221,9 +220,11 @@
 
 						this.enemyPowerX=100;	
 							//console.log("jugador en cuadrante 1");
-						this.enemyPowerY=100;	
+						this.enemyPowerY=200;	
+
 						}else{
-							this.enemyPowerY=0;	
+							this.enemyPowerX=100;	
+							this.enemyPowerY=100;	
 
 							//console.log("jugador en cuadrante 3");
 
@@ -233,28 +234,29 @@
 
 					if(this.CurrentPlayerY < CurrentState.game.world.height/2){
 						this.enemyPowerX=100;	
-						this.enemyPowerY=100;	
+						this.enemyPowerY=200;	
 							//console.log("jugador en cuadrante 2");
 						
 						}else{
-						this.enemyPowerY=0;	
+						this.enemyPowerY=100;	
 							//console.log("jugador en cuadrante 4");
 						}
 				}
 
 
 
-				if(enemyPowerY<60){
-						enemyPowerY=60;
-
-				}
+				
 			
 				if(this.enemyDir > 5){
-
+					enemyPowerY=0;
 					this.enemyDir=-1;
 
 				}else{
+					
+					if(enemyPowerY<100){
+						enemyPowerY=100;
 
+						}
 					this.enemyDir=1;
 
 				}
@@ -348,7 +350,8 @@
 
 	PlatformerBehavior.prototype.winScreen = function() {
 		console.log("im here pantalla");
-	this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
+			this._player.sounds.finLevel.play("finLevel",0, 0.5, false, true);
+			this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
 		
 		};
 
@@ -363,10 +366,11 @@
 		
 		this._state.camera.onFadeComplete.add(nextL, this);
 
-		this._player.game.camera.fade(0x000000, 500);
+		//this._player.game.camera.fade(0x000000, 500);
 
+		this._state.game.state.start(this._nextLevel, true, true, this._vidas);
+		
 		function nextL(){
-			this._state.game.state.start(this._nextLevel, true, true, this._vidas);
 		};
 		
 		
@@ -376,10 +380,18 @@
 	
 
 	PlatformerBehavior.prototype.update = function() {
+
+ 
+
 	this._arcade.collide(this._player, this._plataformas);
 
 	if(this._playing ){
 
+	if (this._state.input.activePointer.isDown)
+    {
+      this._velocity.y = -150;
+    }
+   
 		
 		this._arcade.overlap(this._player, this._coins, coining);
 		this._arcade.collide(this._enemigos, this._enemigos);
@@ -423,7 +435,7 @@
 
 		function coining(player, coin)	{
 
-			player.sounds.play('coin');
+			player.sounds.fxCoin.play("coin");
 			coin.visible = false;
 			coin.destroy();
 			console.log("wanna coin");

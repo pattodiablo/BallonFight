@@ -139,18 +139,62 @@ Level2.prototype.create = function () {
 
 Level2.prototype.myPreload = function () {
 	this.load.audio('coin', ['assets/audio/coin.mp3','assets/audio/coin.ogg']);
+	this.load.audio('bgSound', ['assets/audio/bgSound.mp3','assets/audio/bgSound.ogg']);
+	this.load.audio('playerBlow', ['assets/audio/playerBlow.mp3','assets/audio/playerBlow.ogg']);
+	this.load.audio('bgSound2', ['assets/audio/bgSound2.mp3','assets/audio/bgSound2.ogg']);
+	this.load.audio('finLevel', ['assets/audio/finLevel.mp3','assets/audio/finLevel.ogg']);
 };
 
 
 Level2.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
-	fxCoin = this.add.audio('coin');
-	fxCoin.allowMultiple = true;
-	fxCoin.addMarker('coin', 0, 1);
-	fxCoin.play('coin');
+	var allSounds = this.loadSounds();
 	
-	this.behavior = new PlatformerBehavior(this, "Level", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn,fxCoin);
+	
+	this.behavior = new PlatformerBehavior(this, "Level", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
+
+
+Level2.prototype.loadSounds = function () {
+	
+	var allSounds = {};
+		
+		fxCoin = this.add.audio('coin');
+		fxCoin.allowMultiple = true;
+		fxCoin.addMarker('coin', 0, 1);
+		
+		fxCoin.play('coin');
+		
+		fxBGSound = this.add.audio('bgSound');
+		fxBGSound.allowMultiple = false;
+		fxBGSound.addMarker('bgSound', 0, 6.69);
+		
+		//fxBGSound.play('bgSound',0, 0.5, false, true);
+		
+		fxBGSound2 = this.add.audio('bgSound2');
+		fxBGSound2.allowMultiple = false;
+		fxBGSound2.addMarker('bgSound2', 0, 2.32);
+		fxBGSound2.play('bgSound2',8, 0.5, false, true);
+		
+		fxPblow = this.add.audio('playerBlow');
+		fxPblow.allowMultiple = false;
+		fxPblow.addMarker('playerBlow', 0, 0.63);
+		//fxBGSound2.play('playerBlow',0, 0.5, false, true);
+		
+		finLevel = this.add.audio('finLevel');
+		finLevel.allowMultiple = false;
+		finLevel.addMarker('finLevel', 0, 3.3);
+		
+		allSounds.fxCoin = fxCoin;
+		allSounds.fxBGSound = fxBGSound;
+		allSounds.fxBGSound2 = fxBGSound2;
+		allSounds.fxPblow = fxPblow;
+		allSounds.finLevel = finLevel;
+		
+		return allSounds;
+		
+	};
+
 
 Level2.prototype.update = function () {
 	this.behavior.update();

@@ -49,7 +49,10 @@
           "type": "image",
           "id": "1cfc5d3e-9416-462e-9ffa-1a8007f4874f",
           "asset": "0",
-          "info": {"editorName": "background"}
+          "info": {
+            "editorName": "background",
+            "editorField": true
+          }
         },
         {
           "type": "image",

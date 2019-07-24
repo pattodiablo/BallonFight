@@ -34,20 +34,17 @@ Level.prototype.init = function (vidas) {
 };
 
 Level.prototype.preload = function () {
-
+	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
 	this.load.pack('player', 'assets/pack.json');
-
+	
 	this.myPreload();
 	
 };
 
 Level.prototype.create = function () {
-
-	
-	
-	this.add.sprite(0.0, 0.0, 'background');
+	var _background = this.add.sprite(0.0, 0.0, 'background');
 	
 	this.add.sprite(-160.0, 807.0, 'grass');
 	
@@ -99,6 +96,7 @@ Level.prototype.create = function () {
 	
 	// fields
 	
+	this.fBackground = _background;
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
 	this.fPlatformTipo = _platformTipo;
@@ -122,6 +120,10 @@ Level.prototype.create = function () {
 
 Level.prototype.myPreload = function () {
 	this.load.audio('coin', ['assets/audio/coin.mp3','assets/audio/coin.ogg']);
+	this.load.audio('bgSound', ['assets/audio/bgSound.mp3','assets/audio/bgSound.ogg']);
+	this.load.audio('playerBlow', ['assets/audio/playerBlow.mp3','assets/audio/playerBlow.ogg']);
+	this.load.audio('bgSound2', ['assets/audio/bgSound2.mp3','assets/audio/bgSound2.ogg']);
+	this.load.audio('finLevel', ['assets/audio/finLevel.mp3','assets/audio/finLevel.ogg']);
 };
 
 Level.prototype.myInit = function () {
@@ -130,16 +132,56 @@ Level.prototype.myInit = function () {
 
 
 Level.prototype.myCreate = function () {
-	//this.sound.setDecodedCallback('coin', start, this);
+	
+	var allSounds = this.loadSounds();
+
+	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+
+};
+
+Level.prototype.loadSounds = function () {
+	
+var allSounds = {};
+	
 	fxCoin = this.add.audio('coin');
 	fxCoin.allowMultiple = true;
 	fxCoin.addMarker('coin', 0, 1);
+	
 	fxCoin.play('coin');
 	
-	this.behavior = new PlatformerBehavior(this, "Level2", this.fPlayer, this.fPlataformas, this.fEnemies, this.fEnemyL2, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn,fxCoin);
+	fxBGSound = this.add.audio('bgSound');
+	fxBGSound.allowMultiple = false;
+	fxBGSound.addMarker('bgSound', 0, 6.69);
+	
+	fxBGSound.play('bgSound',0, 0.5, false, true);
+	
+	fxBGSound2 = this.add.audio('bgSound2');
+	fxBGSound2.allowMultiple = false;
+	fxBGSound2.addMarker('bgSound2', 0, 2.32);
+	// fxBGSound2.play('bgSound2',8, 0.5, false, true);
+	
+	fxPblow = this.add.audio('playerBlow');
+	fxPblow.allowMultiple = false;
+	fxPblow.addMarker('playerBlow', 0, 0.63);
+	//fxBGSound2.play('playerBlow',0, 0.5, false, true);
+	
+	finLevel = this.add.audio('finLevel');
+	finLevel.allowMultiple = false;
+	finLevel.addMarker('finLevel', 0, 3.3);
+	
+	allSounds.fxCoin = fxCoin;
+	allSounds.fxBGSound = fxBGSound;
+	allSounds.fxBGSound2 = fxBGSound2;
+	allSounds.fxPblow = fxPblow;
+	allSounds.finLevel = finLevel;
+	
+	return allSounds;
+	
 };
 
+
 Level.prototype.update = function () {
+	this.fBackground.fixedToCamera = true;
 	this.behavior.update();
 };
 

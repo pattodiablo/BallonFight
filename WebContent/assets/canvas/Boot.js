@@ -24,7 +24,7 @@ Boot.prototype.constructor = Boot;
 
 Boot.prototype.init = function () {
 	
-	this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
+
 	
 	this.myInit();
 	
