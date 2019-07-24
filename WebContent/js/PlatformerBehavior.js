@@ -278,7 +278,7 @@
     		var CurrentState = enemy.data;
     		var CurrentPlayer = CurrentState.game.fPlayer;
     	
-			this._state.time.events.loop(Math.abs(Math.random()*3000), updateCounter);
+			this._state.time.events.loop(Math.abs(Math.random()*2000), updateCounter);
 
 
 			function updateCounter(){
@@ -297,7 +297,7 @@
 
 				}else{
 
-					this.enemyPowerY2= Math.abs(this.CurrentPlayerY - enemy.y)*0.8;
+					this.enemyPowerY2= Math.abs(this.CurrentPlayerY - enemy.y);
 					
 					
 				}
@@ -384,7 +384,9 @@
  
 
 	this._arcade.collide(this._player, this._plataformas);
-
+	this._arcade.collide(this._plataformas, this._enemigos);
+	this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
+	
 	if(this._playing ){
 
 	if (this._state.input.activePointer.isDown)
@@ -399,8 +401,7 @@
 		this._arcade.collide(this._enemigos2, this._enemigos2);
 		this._arcade.collide(this._player, this._enemigos,touchingEnemy);
 		this._arcade.collide(this._player, this._enemigos2,touchingEnemy);
-		this._arcade.collide(this._plataformas, this._enemigos);
-		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
+		
 
 
 	
