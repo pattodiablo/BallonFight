@@ -208,7 +208,7 @@
 			function updateCounter(){
 
 				
-				this.enemyDir = Math.round(Math.random()*10);
+				this.enemyDir = Math.sign(this.CurrentPlayerX - enemy.x);
 
 
 				this.CurrentPlayerX = CurrentPlayer.x;
@@ -220,7 +220,7 @@
 
 						this.enemyPowerX=100;	
 							//console.log("jugador en cuadrante 1");
-						this.enemyPowerY=200;	
+						this.enemyPowerY=400;	
 
 						}else{
 							this.enemyPowerX=100;	
@@ -234,7 +234,7 @@
 
 					if(this.CurrentPlayerY < CurrentState.game.world.height/2){
 						this.enemyPowerX=100;	
-						this.enemyPowerY=200;	
+						this.enemyPowerY=400;	
 							//console.log("jugador en cuadrante 2");
 						
 						}else{
@@ -244,22 +244,6 @@
 				}
 
 
-
-				
-			
-				if(this.enemyDir > 5){
-					enemyPowerY=0;
-					this.enemyDir=-1;
-
-				}else{
-					
-					if(enemyPowerY<100){
-						enemyPowerY=100;
-
-						}
-					this.enemyDir=1;
-
-				}
 
 				enemy.body.velocity.x=this.enemyPowerX*this.enemyDir;
 				enemy.body.velocity.y=-this.enemyPowerY;
@@ -445,8 +429,9 @@
 
 		function touchingEnemy(player, enemy){
 
+			player.sounds.dead.play("dead",0, 0.5, false, true);
 			player.visible = false;
-			player.data.game.camera.fade(0x000000, 1000);
+			player.data.game.camera.fade(0x000000, 3000);
 			player.destroy();	
 
 		}

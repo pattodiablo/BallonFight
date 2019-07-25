@@ -124,6 +124,7 @@ Level.prototype.myPreload = function () {
 	this.load.audio('playerBlow', ['assets/audio/playerBlow.mp3','assets/audio/playerBlow.ogg']);
 	this.load.audio('bgSound2', ['assets/audio/bgSound2.mp3','assets/audio/bgSound2.ogg']);
 	this.load.audio('finLevel', ['assets/audio/finLevel.mp3','assets/audio/finLevel.ogg']);
+	this.load.audio('dead', ['assets/audio/dead.mp3','assets/audio/dead.ogg']);
 };
 
 Level.prototype.myInit = function () {
@@ -169,11 +170,16 @@ var allSounds = {};
 	finLevel.allowMultiple = false;
 	finLevel.addMarker('finLevel', 0, 3.3);
 	
+	dead = this.add.audio('dead');
+	dead.allowMultiple = false;
+	dead.addMarker('dead', 0, 2.7);
+	
 	allSounds.fxCoin = fxCoin;
 	allSounds.fxBGSound = fxBGSound;
 	allSounds.fxBGSound2 = fxBGSound2;
 	allSounds.fxPblow = fxPblow;
 	allSounds.finLevel = finLevel;
+	allSounds.dead = dead;
 	
 	return allSounds;
 	
