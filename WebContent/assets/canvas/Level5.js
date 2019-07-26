@@ -8,20 +8,20 @@ var AllSounds_proto = Object.create(GameSounds.prototype);
 
 
 /**
- * Level2.
+ * Level5.
  */
-function Level2() {
+function Level5() {
 	
 	Phaser.State.call(this);
 	
 }
 
 /** @type Phaser.State */
-var Level2_proto = Object.create(Phaser.State.prototype);
-Level2.prototype = Level2_proto;
-Level2.prototype.constructor = Level2;
+var Level5_proto = Object.create(Phaser.State.prototype);
+Level5.prototype = Level5_proto;
+Level5.prototype.constructor = Level5;
 
-Level2.prototype.init = function (vidas) {
+Level5.prototype.init = function (vidas) {
 	
 	
 	console.log(vidas);
@@ -34,16 +34,17 @@ Level2.prototype.init = function (vidas) {
 	
 };
 
-Level2.prototype.preload = function () {
+Level5.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('player', 'assets/pack.json');
+	this.load.pack('Enemy', 'assets/enemy.json');
 	
 	this.myPreload();
 	
 };
 
-Level2.prototype.create = function () {
+Level5.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'background');
 	
 	this.add.sprite(-160.0, 807.0, 'grass');
@@ -53,22 +54,22 @@ Level2.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo1 = new Platform1(this.game, -115.0, 181.0);
-	_Plataformas.add(_platformTipo1);
-	
 	var _platformTipo = new Platform1(this.game, 382.0, 655.0);
 	_Plataformas.add(_platformTipo);
 	
-	var _platformTipo2 = new Platform1(this.game, 542.0, 289.0);
+	var _platformTipo2 = new Platform1(this.game, -177.0, 432.0);
 	_Plataformas.add(_platformTipo2);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 393.0, 721.0);
+	var _coinStar = new CoinStar(this.game, 49.0, 366.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 386.0, 589.0);
+	var _coinStar1 = new CoinStar(this.game, 385.0, 575.0);
 	_Coins.add(_coinStar1);
+	
+	var _coinStar2 = new CoinStar(this.game, 441.0, 111.0);
+	_Coins.add(_coinStar2);
 	
 	var _Enemies = this.add.group();
 	
@@ -87,8 +88,14 @@ Level2.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
+	var _enemy = new Enemy(this.game, 514.0, 110.0);
+	_EnemyL3.add(_enemy);
+	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
+	
+	var _platformTipo1 = new Platform1(this.game, -42.0, -86.0);
+	_plataformasMove.add(_platformTipo1);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -103,17 +110,19 @@ Level2.prototype.create = function () {
 	
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
-	this.fPlatformTipo1 = _platformTipo1;
 	this.fPlatformTipo = _platformTipo;
 	this.fPlatformTipo2 = _platformTipo2;
 	this.fCoins = _Coins;
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
+	this.fCoinStar2 = _coinStar2;
 	this.fEnemies = _Enemies;
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
+	this.fEnemy = _enemy;
 	this.fPlataformasMove = _plataformasMove;
+	this.fPlatformTipo1 = _platformTipo1;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
 	this.fPauseBtn = _pauseBtn;
@@ -124,19 +133,19 @@ Level2.prototype.create = function () {
 
 /* --- end generated code --- */
 
-Level2.prototype.myPreload = function () {
+Level5.prototype.myPreload = function () {
 	AllSounds_proto.preload(this);
 };
 
 
-Level2.prototype.myCreate = function () {
+Level5.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
 	var allSounds = AllSounds_proto.create(this);
-	this.behavior = new PlatformerBehavior(this, "Level3", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+	this.behavior = new PlatformerBehavior(this, "Level6", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
 
 
-Level2.prototype.update = function () {
+Level5.prototype.update = function () {
 	this.behavior.update();
 };
 

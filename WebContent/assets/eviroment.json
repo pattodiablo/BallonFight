@@ -89,10 +89,22 @@
       "key": "emptyBg",
       "url": "assets/sprites/emptyBg.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "platformTipo2",
+      "url": "assets/sprites/platformTipo2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "platformTipo3",
+      "url": "assets/sprites/platformTipo3.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1563817304066",
+    "generated": "1564157323378",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

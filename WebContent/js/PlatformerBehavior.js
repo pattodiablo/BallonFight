@@ -1,5 +1,5 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas, enemigos, enemigos2, coins, vidas, corazones, winScreen, pausebtn, sounds) {
+	function PlatformerBehavior(state, nextLevel, player, plataformas,platafmove, enemigos, enemigos2, enemigos3, coins, vidas, corazones, winScreen, pausebtn, sounds) {
 	// init
 	
 	//	this._sounds.play('coin');
@@ -8,6 +8,8 @@
 		this._vidas = vidas;
 		this._winScreen = winScreen;
 		this._playing = true;
+		this._canFly = false;
+		this._firstime = true;
 		
 	// physics
 		this._arcade = state.game.physics.arcade;
@@ -18,12 +20,14 @@
 		this._player.sounds = sounds;
 		
 		this._plataformas= plataformas;
+		this._platafmove = platafmove;
 		this._coins = coins;
 		
 
 		this._corazones = corazones;
 		this._enemigos = enemigos;
 		this._enemigos2 = enemigos2;
+		this._enemigos3 = enemigos3;
 		this.maxPower = 300;
 		this._state.camera.follow(this._player);
 		this._state.camera.onFadeComplete.add(this.resetLevel, this);
@@ -54,6 +58,8 @@
   		  }
 
 
+	
+
 	//frinccion del aire	
 
 		this.swipeCoordX, this.swipeCoordY,  this.swipeCoordX2,  this.swipeCoordY2,  this.swipeMinDistance = 0.5;  
@@ -77,9 +83,9 @@
 
 
 		this._arcade.enable(this._coins, true);
-		this._coins.setAll("body.allowGravity", false);
-		this._coins.setAll("body.immovable", true);
-		this._coins.setAll("body.collideWorldBounds", true);
+		this._coins.setAll("body.allowGravity", true);
+		this._coins.setAll("body.immovable", false);
+		this._coins.setAll("body.collideWorldBounds", false);
 		
 	//enemigos1	
 		
@@ -94,14 +100,27 @@
 		this._enemigos2.setAll("body.allowGravity", true);
 		this._enemigos2.setAll("body.immovable", false);
 		this._enemigos2.setAll("body.collideWorldBounds", true);
+
+		//enemigos3
+		
+		this._arcade.enable(this._enemigos3, true);
+		this._enemigos3.setAll("body.allowGravity", true);
+		this._enemigos3.setAll("body.immovable", false);
+		this._enemigos3.setAll("body.collideWorldBounds", true);
 		
 		
 	//plataformas
 		this._arcade.enable(this._plataformas, true);
 		this._plataformas.setAll("body.allowGravity", false);
 		this._plataformas.setAll("body.immovable", true);
-		this._plataformas.setAll("body.friccion", false);	
+		this._plataformas.setAll("body.friccion", false);
 
+	//plataformas movibles
+		this._arcade.enable(this._platafmove, true);
+		this._platafmove.setAll("body.allowGravity", false);
+		this._platafmove.setAll("body.immovable", true);
+		this._platafmove.setAll("body.friccion", false);
+		this._platafmove.setAll("body.velocity.x", -100);
 
 	//manejo de vidas
 
@@ -123,15 +142,27 @@
 		}
 		
 		}else{
-		this._state.game.state.start("GoverScene");
-		//this._state.game.state.start("IntroScene");
+		this._state.game.state.start("GoverScene"); //pantalla de game over
 
-			//console.log("game over play again");
 		}		
 
+	//poner intro musical dependiendo del nivel
+	if( this._state.state.getCurrentState().key == "Level"){
 
-	// touchScreen
+		var iniSound = this._player.sounds.fxBGSound.play("bgSound",0, 0.5, false, true);
+		iniSound.onStop.add(soundStopped, this);
+		this._firstime = false;
+
+	}else{
+
+		var iniSound = this._player.sounds.fxBGSound2.play("bgSound2",0, 0.5, false, true);
+		iniSound.onStop.add(soundStopped, this);
+	}
 		
+
+	function soundStopped(sound) {	}
+	// touchScreen
+		this._canFly = true;
 		this._state.input.addPointer();
 
 
@@ -162,13 +193,10 @@
 			
 			//implementar on input down 
 
-    	this._state.game.input.onTap.add(function(pointer){
-    		//console.log("tapping");
-    	
+    	this._state.game.input.onTap.add(function(puntero){
     		
-    		//this._player.sounds[3].play("playerBlow");
     		this._player.sounds.fxPblow.play("playerBlow");
- 			this._velocity.y = -100;
+ 			
 
     	}, this);	
 			
@@ -195,12 +223,15 @@
 		}, this);
 
 
+	
+	
 
-		this._enemigos.forEach(function(enemy) { //funcionamiento enemigos tipo 1
+		this._enemigos.forEach(function(enemy) { //funcionamiento enemigos tipo 1 (hard)
     		
     		enemy.body.setSize(enemy.width/2, enemy.height, enemy.width/4, 0);
-    		var CurrentState = enemy.data;
-    		var CurrentPlayer = CurrentState.game.fPlayer;
+    		
+    		 CurrentState = enemy.data;
+    		 CurrentPlayer = CurrentState.game.fPlayer;
 
 			this._state.time.events.loop(2000, updateCounter);
 
@@ -255,14 +286,15 @@
   		}, this);
 
 
-		this._enemigos2.forEach(function(enemy) { //funcionamiento enemigos tipo 2
+		this._enemigos2.forEach(function(enemy) { //funcionamiento enemigos tipo 2 (medium)
     		
 
     		enemy.body.setSize(enemy.width/2, enemy.height, enemy.width/4, 0);
-    		var CurrentState = enemy.data;
-    		var CurrentPlayer = CurrentState.game.fPlayer;
+    		
+    		 CurrentState = enemy.data;
+    		 CurrentPlayer = CurrentState.game.fPlayer;
     	
-			this._state.time.events.loop(Math.abs(Math.random()*2000), updateCounter);
+			this._state.time.events.loop(Math.abs(Math.random()*4000), updateCounter);
 
 
 			function updateCounter(){
@@ -293,11 +325,12 @@
 
 						if(this.CurrentPlayerY < CurrentState.game.world.height/2){
 
-						this.enemyPower2Y=400;	
+						this.enemyPower2Y=300;	
 							//console.log("jugador en cuadrante 1");
 						
 						}else{
-							this.enemyPower2Y=0;	
+							
+						this.enemyPower2Y=0;	
 
 							//console.log("jugador en cuadrante 3");
 
@@ -306,7 +339,7 @@
 				}else{
 
 					if(this.CurrentPlayerY < CurrentState.game.world.height/2){
-						this.enemyPower2Y=400;	
+						this.enemyPower2Y=300;	
 							//console.log("jugador en cuadrante 2");
 						
 						}else{
@@ -316,13 +349,87 @@
 				}	
 
 				enemy.body.velocity.x=this.enemyPowerX2*this.enemyDir2;
-				enemy.body.velocity.y=-this.enemyPowerY2;
+				enemy.body.velocity.y=-this.enemyPower2Y;
 		
 
 			}
 
   		}, this);
   		
+  	
+	this._enemigos3.forEach(function(enemy) { //funcionamiento enemigos tipo 3 (easy)
+    		
+    		enemy.body.setSize(enemy.width/2, enemy.height, enemy.width/4, 0);
+    		
+    		 CurrentState = enemy.data;
+    		 CurrentPlayer = CurrentState.game.fPlayer;
+
+			this._state.time.events.loop(1000, updateCounter);
+
+
+			function updateCounter(){
+
+				
+				this.enemyDir3 = Math.round(Math.random()*10);
+
+
+				this.CurrentPlayerX = CurrentPlayer.x;
+				this.CurrentPlayerY = CurrentPlayer.y;
+
+				if(this.CurrentPlayerX < CurrentState.game.world.width/2){
+
+						if(this.CurrentPlayerY < CurrentState.game.world.height/2){
+
+						this.enemyPowerX=100;	
+							//console.log("jugador en cuadrante 1");
+						this.enemyPowerY=200;	
+
+						}else{
+							this.enemyPowerX=100;	
+							this.enemyPowerY=50;	
+
+							//console.log("jugador en cuadrante 3");
+
+						}
+							
+				}else{
+
+					if(this.CurrentPlayerY < CurrentState.game.world.height/2){
+						this.enemyPowerX=100;	
+						this.enemyPowerY=200;	
+							//console.log("jugador en cuadrante 2");
+						
+						}else{
+						this.enemyPowerY=50;	
+							//console.log("jugador en cuadrante 4");
+						}
+				}
+
+				if(this.enemyDir3 > 5){
+					enemyPowerY=0;
+					this.enemyDir3=-1;
+
+				}else{
+					
+					if(enemyPowerY<100){
+						enemyPowerY=100;
+
+						}
+					this.enemyDir3=1;
+
+				}
+
+				enemy.body.velocity.x=this.enemyPowerX*this.enemyDir3;
+				enemy.body.velocity.y=-this.enemyPowerY;
+
+		
+
+			}
+
+  		}, this);
+
+	
+
 //pantalla de winning
 
   		this.winerScreen = new Phaser.Signal();
@@ -333,6 +440,7 @@
 		}
 
 	PlatformerBehavior.prototype.winScreen = function() {
+		
 		console.log("im here pantalla");
 			this._player.sounds.finLevel.play("finLevel",0, 0.5, false, true);
 			this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
@@ -347,49 +455,69 @@
 		};
 
 	PlatformerBehavior.prototype.NextLevel = function() {
-		
-		this._state.camera.onFadeComplete.add(nextL, this);
 
 		//this._player.game.camera.fade(0x000000, 500);
 
 		this._state.game.state.start(this._nextLevel, true, true, this._vidas);
-		
-		function nextL(){
-		};
-		
-		
 
 		};
 
 	
+		
 
 	PlatformerBehavior.prototype.update = function() {
 
- 
+		this._platafmove.forEach(this.updatePlatform, this);
 
-	this._arcade.collide(this._player, this._plataformas);
-	this._arcade.collide(this._plataformas, this._enemigos);
-	this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
-	
-	if(this._playing ){
+		this._arcade.collide(this._player, this._plataformas);
+		this._arcade.collide(this._player, this._platafmove);
 
-	if (this._state.input.activePointer.isDown)
-    {
-      this._velocity.y = -150;
-    }
-   
+		this._arcade.collide(this._plataformas, this._enemigos, bounceAbit);
+		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
+		this._arcade.collide(this._plataformas, this._enemigos3, bounceAbit);
+		
+
+		this._arcade.collide(this._platafmove, this._enemigos, bounceAbit);
+		this._arcade.collide(this._platafmove, this._enemigos2, bounceAbit);
+		this._arcade.collide(this._platafmove, this._enemigos3, bounceAbit);
+		
+		this._arcade.collide(this._platafmove, this._coins, bounceAbit);
+		this._arcade.collide(this._plataformas, this._coins, bounceAbit);
+
+				
+
+		if(this._playing ){
+
+		if (this._state.input.activePointer.isDown)
+	    {
+	    	if(this._canFly){
+
+	    		  this._velocity.y = -150;
+	    	}
+	    
+	    }
+	   
 		
 		this._arcade.overlap(this._player, this._coins, coining);
 		this._arcade.collide(this._enemigos, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos);
 		this._arcade.collide(this._enemigos2, this._enemigos2);
+		this._arcade.collide(this._enemigos3, this._enemigos);
+		this._arcade.collide(this._enemigos3, this._enemigos2);
+		this._arcade.collide(this._enemigos3, this._enemigos3);
 		this._arcade.collide(this._player, this._enemigos,touchingEnemy);
 		this._arcade.collide(this._player, this._enemigos2,touchingEnemy);
-		
+		this._arcade.collide(this._player, this._enemigos3,touchingEnemy);
 
 
 	
 	}else{
+
+	this._enemigos3.forEach(function(enemy) { 	
+		enemy.visible = false;
+		//enemy.body.collide = false;
+
+	}, this);
 
 	this._enemigos2.forEach(function(enemy) { 	
 		enemy.visible = false;
@@ -436,8 +564,8 @@
 
 		}
 
-		function bounceAbit(enemy, platform){
-			enemy.body.bounce.set(0.8);
+		function bounceAbit(entity, platform){
+			entity.body.bounce.set(0.8);
 			
 		}
 
@@ -456,5 +584,18 @@
 
 	};
 
+PlatformerBehavior.prototype.updatePlatform = function(platform) {
+	console.log("moving");
+	var velo = platform.body.velocity;
+
+
+	var right = 300;
+	if (platform.x < 0 && velo.x < 0) {
+		velo.x *= -1;
+	} else if (platform.x > right && velo.x > 0) {
+		velo.x *= -1;
+		platform.x = right;
+	}
+};
 
 

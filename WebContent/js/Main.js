@@ -3,14 +3,14 @@ window.onload = function() {
 		//var Pixelratio = window.screen.availWidth / 640;
 	  var width = 640  ;﻿﻿﻿
 	  var height = 960 ;
-	  var firstRunLandscape;
+	  var firstRunLandscape = false;
 	  
 	console.log("pixel ratio "+  window.devicePixelRatio); 
 	console.log("largo "  + width + " ancho " + height);
 	  
 	var game = new Phaser.Game(width,height, Phaser.CANVAS);
 	
-	var play = function(game){};
+	var play = function(){};
 	
 	play.prototype = {
 			
@@ -65,6 +65,14 @@ window.onload = function() {
 	game.state.add("GoverScene", goverScene);
 	game.state.add("Level", Level);
 	game.state.add("Level2", Level2);
+	game.state.add("Level3", Level3);
+	game.state.add("Level4", Level4);
+	game.state.add("Level5", Level5);
+	game.state.add("Level6", Level6);
+	game.state.add("Level7", Level7);
+	game.state.add("Level8", Level8);
+	game.state.add("Level9", Level9);
+	game.state.add("Level10", Level10);
 	game.state.start("Play",true,true);
 	
 };	
