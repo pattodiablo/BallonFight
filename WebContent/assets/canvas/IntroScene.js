@@ -97,7 +97,7 @@ IntroScene.prototype.iniciarJuego = function () {
 	
 	
 	console.log("wanna iniciar");
-	this.state.game.state.start("Level", true, true, 3);
+	this.state.game.state.start("Level9", true, true, 3);
 };
 
 

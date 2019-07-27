@@ -37,6 +37,7 @@ Level9.prototype.init = function (vidas) {
 Level9.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
+	this.load.pack('Enemy', 'assets/enemy.json');
 	this.load.pack('player', 'assets/pack.json');
 	
 	this.myPreload();
@@ -50,23 +51,38 @@ Level9.prototype.create = function () {
 	
 	var _Plataformas = this.add.group();
 	
+	this.add.sprite(-1.0, 351.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(493.0, 451.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(-3.0, 564.0, 'platformTipo2', null, _Plataformas);
+	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 382.0, 655.0);
-	_Plataformas.add(_platformTipo);
-	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 393.0, 721.0);
+	var _coinStar = new CoinStar(this.game, 500.0, 628.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 386.0, 589.0);
+	var _coinStar1 = new CoinStar(this.game, 289.0, 133.0);
 	_Coins.add(_coinStar1);
+	
+	var _coinStar2 = new CoinStar(this.game, 42.0, 285.0);
+	_Coins.add(_coinStar2);
+	
+	var _coinStar3 = new CoinStar(this.game, 44.0, 497.0);
+	_Coins.add(_coinStar3);
+	
+	var _coinStar4 = new CoinStar(this.game, 518.0, 382.0);
+	_Coins.add(_coinStar4);
 	
 	var _Enemies = this.add.group();
 	
 	var _EnemyL2 = this.add.group();
+	
+	var _enemy1 = new Enemy2(this.game, 393.0, 109.0);
+	_EnemyL2.add(_enemy1);
 	
 	var _lives = this.add.group();
 	
@@ -81,8 +97,17 @@ Level9.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
+	var _enemy = new Enemy(this.game, 183.0, 129.0);
+	_EnemyL3.add(_enemy);
+	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
+	
+	var _platformTipo4 = new Platform1(this.game, -292.0, -67.0);
+	_plataformasMove.add(_platformTipo4);
+	
+	var _platformTipo = new Platform1(this.game, 24.0, 433.0);
+	_plataformasMove.add(_platformTipo);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -97,15 +122,21 @@ Level9.prototype.create = function () {
 	
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
-	this.fPlatformTipo = _platformTipo;
 	this.fCoins = _Coins;
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
+	this.fCoinStar2 = _coinStar2;
+	this.fCoinStar3 = _coinStar3;
+	this.fCoinStar4 = _coinStar4;
 	this.fEnemies = _Enemies;
 	this.fEnemyL2 = _EnemyL2;
+	this.fEnemy1 = _enemy1;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
+	this.fEnemy = _enemy;
 	this.fPlataformasMove = _plataformasMove;
+	this.fPlatformTipo4 = _platformTipo4;
+	this.fPlatformTipo = _platformTipo;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
 	this.fPauseBtn = _pauseBtn;
