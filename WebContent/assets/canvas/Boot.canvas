@@ -41,22 +41,10 @@
     "info": {
       "editorName": "Boot",
       "setAll": [],
-      "children": [{
-        "type": "image",
-        "id": "7e81abb8-1c4c-49c5-ba99-9ee0540096ff",
-        "asset": "0",
-        "info": {
-          "editorName": "emptyBg",
-          "editorField": true
-        }
-      }]
+      "children": []
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/eviroment.json",
-    "section": "Ground",
-    "asset": "emptyBg"
-  }},
+  "asset-table": {},
   "prefab-table": {}
 }

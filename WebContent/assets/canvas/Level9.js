@@ -62,10 +62,10 @@ Level9.prototype.create = function () {
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 500.0, 628.0);
+	var _coinStar = new CoinStar(this.game, 387.0, 573.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 289.0, 133.0);
+	var _coinStar1 = new CoinStar(this.game, 348.0, 150.0);
 	_Coins.add(_coinStar1);
 	
 	var _coinStar2 = new CoinStar(this.game, 42.0, 285.0);
@@ -103,11 +103,10 @@ Level9.prototype.create = function () {
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	var _platformTipo4 = new Platform1(this.game, -292.0, -67.0);
+	var _platformTipo4 = new Platform1(this.game, -129.0, -53.0);
 	_plataformasMove.add(_platformTipo4);
 	
-	var _platformTipo = new Platform1(this.game, 24.0, 433.0);
-	_plataformasMove.add(_platformTipo);
+	this.add.sprite(-126.0, 373.0, 'platformTipo3', null, _plataformasMove);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -136,7 +135,6 @@ Level9.prototype.create = function () {
 	this.fEnemy = _enemy;
 	this.fPlataformasMove = _plataformasMove;
 	this.fPlatformTipo4 = _platformTipo4;
-	this.fPlatformTipo = _platformTipo;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
 	this.fPauseBtn = _pauseBtn;

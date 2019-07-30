@@ -105,7 +105,7 @@
                 },
                 "info": {
                   "editorName": "platformTipo",
-                  "x": 472,
+                  "x": 499,
                   "y": 278
                 }
               }
@@ -146,7 +146,7 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 479,
+                  "x": 496,
                   "y": 212
                 }
               },
@@ -161,8 +161,8 @@
                 },
                 "info": {
                   "editorName": "coinStar2",
-                  "x": 107,
-                  "y": 451
+                  "x": 43,
+                  "y": 469
                 }
               },
               {
@@ -299,7 +299,7 @@
                 "asset": "3",
                 "info": {
                   "editorName": "platformTipo1",
-                  "x": -412,
+                  "x": -471,
                   "y": 270
                 }
               },

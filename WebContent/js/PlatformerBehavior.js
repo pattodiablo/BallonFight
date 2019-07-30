@@ -120,7 +120,7 @@
 		this._platafmove.setAll("body.allowGravity", false);
 		this._platafmove.setAll("body.immovable", true);
 		this._platafmove.setAll("body.friccion", false);
-		this._platafmove.setAll("body.velocity.x", -100);
+		this._platafmove.setAll("body.velocity.x", 100);
 
 	//manejo de vidas
 
@@ -147,7 +147,7 @@
 		}		
 
 	//poner intro musical dependiendo del nivel
-	if( this._state.state.getCurrentState().key == "Level"){
+	if( this._state.state.getCurrentState().key == "Level" || this._state.state.getCurrentState().key == "Level5" || this._state.state.getCurrentState().key == "Level10" ){
 
 		var iniSound = this._player.sounds.fxBGSound.play("bgSound",0, 0.5, false, true);
 		iniSound.onStop.add(soundStopped, this);
@@ -450,7 +450,7 @@
 	PlatformerBehavior.prototype.resetLevel = function() {
 	
 		this._vidas--;
-		this._state.game.state.restart("Level", false, this._vidas);
+		this._state.game.state.restart(this.CurrentState, true, true, this._vidas);
 
 		};
 
@@ -467,7 +467,7 @@
 
 	PlatformerBehavior.prototype.update = function() {
 
-		this._platafmove.forEach(this.updatePlatform, this);
+		
 
 		this._arcade.collide(this._player, this._plataformas);
 		this._arcade.collide(this._player, this._platafmove);
@@ -475,7 +475,6 @@
 		this._arcade.collide(this._plataformas, this._enemigos, bounceAbit);
 		this._arcade.collide(this._plataformas, this._enemigos2, bounceAbit);
 		this._arcade.collide(this._plataformas, this._enemigos3, bounceAbit);
-		
 
 		this._arcade.collide(this._platafmove, this._enemigos, bounceAbit);
 		this._arcade.collide(this._platafmove, this._enemigos2, bounceAbit);
@@ -484,7 +483,7 @@
 		this._arcade.collide(this._platafmove, this._coins, bounceAbit);
 		this._arcade.collide(this._plataformas, this._coins, bounceAbit);
 
-				
+		this._platafmove.forEach(this.updatePlatform, this);		
 
 		if(this._playing ){
 
@@ -556,11 +555,14 @@
 		}
 
 		function touchingEnemy(player, enemy){
-
-			player.sounds.dead.play("dead",0, 0.5, false, true);
-			player.visible = false;
+		
+			
+		
 			player.data.game.camera.fade(0x000000, 3000);
-			player.destroy();	
+			player.visible = false;
+			player.sounds.dead.play("dead",0, 0.5, false, true);
+			player.kill();
+
 
 		}
 
@@ -585,17 +587,33 @@
 	};
 
 PlatformerBehavior.prototype.updatePlatform = function(platform) {
-	console.log("moving");
-	var velo = platform.body.velocity;
 
 
-	var right = 300;
-	if (platform.x < 0 && velo.x < 0) {
-		velo.x *= -1;
-	} else if (platform.x > right && velo.x > 0) {
-		velo.x *= -1;
-		platform.x = right;
+
+
+	if(typeof platform.originalPos == 'undefined'){
+	
+	platform.originalPos = platform.body.position.x;
+	platform.distance = platform.width;
+	
+	
+	}else{
+
+		var velo = platform.body.velocity;
+		var originalPos = platform.originalPos;
+	
+
+		if(platform.distance<=0){
+			velo.x *= -1;
+			 platform.distance = platform.width ;
+
+		}
+
+		
+		platform.distance--;
+
 	}
+	
 };
 
 

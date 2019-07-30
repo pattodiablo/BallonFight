@@ -37,8 +37,8 @@ Level8.prototype.init = function (vidas) {
 Level8.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
-	this.load.pack('player', 'assets/pack.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
+	this.load.pack('player', 'assets/pack.json');
 	
 	this.myPreload();
 	
@@ -81,6 +81,12 @@ Level8.prototype.create = function () {
 	
 	var _EnemyL2 = this.add.group();
 	
+	var _enemy2 = new Enemy2(this.game, 199.0, 599.0);
+	_EnemyL2.add(_enemy2);
+	
+	var _enemy3 = new Enemy2(this.game, 76.0, 704.0);
+	_EnemyL2.add(_enemy3);
+	
 	var _lives = this.add.group();
 	
 	var _vida = new Vida(this.game, 15.0, 20.0);
@@ -94,11 +100,11 @@ Level8.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
+	var _enemy1 = new Enemy(this.game, 143.0, 447.0);
+	_EnemyL3.add(_enemy1);
+	
 	var _enemy = new Enemy(this.game, 421.0, 788.0);
 	_EnemyL3.add(_enemy);
-	
-	var _enemy2 = new Enemy(this.game, 134.0, 267.0);
-	_EnemyL3.add(_enemy2);
 	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
@@ -124,10 +130,12 @@ Level8.prototype.create = function () {
 	this.fCoinStar2 = _coinStar2;
 	this.fEnemies = _Enemies;
 	this.fEnemyL2 = _EnemyL2;
+	this.fEnemy2 = _enemy2;
+	this.fEnemy3 = _enemy3;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
+	this.fEnemy1 = _enemy1;
 	this.fEnemy = _enemy;
-	this.fEnemy2 = _enemy2;
 	this.fPlataformasMove = _plataformasMove;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;

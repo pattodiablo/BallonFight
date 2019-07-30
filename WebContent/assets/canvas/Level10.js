@@ -56,7 +56,7 @@ Level10.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 472.0, 278.0);
+	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
 	_Plataformas.add(_platformTipo);
 	
 	var _Coins = this.add.group();
@@ -64,10 +64,10 @@ Level10.prototype.create = function () {
 	var _coinStar = new CoinStar(this.game, 498.0, 588.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 479.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 107.0, 451.0);
+	var _coinStar2 = new CoinStar(this.game, 43.0, 469.0);
 	_Coins.add(_coinStar2);
 	
 	var _coinStar3 = new CoinStar(this.game, 12.0, 133.0);
@@ -96,7 +96,7 @@ Level10.prototype.create = function () {
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-412.0, 270.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-471.0, 270.0, 'platformTipo3', null, _plataformasMove);
 	
 	this.add.sprite(20.0, 387.0, 'platformTipo3', null, _plataformasMove);
 	

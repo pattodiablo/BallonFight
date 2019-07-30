@@ -43,12 +43,15 @@ IntroScene.prototype.init = function () {
 IntroScene.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
+	
 	this.myPreload();
 	
 };
 
 IntroScene.prototype.create = function () {
 	var _introScene1 = this.add.sprite(0.0, 0.0, 'introScene1');
+	
+
 	
 	
 	
@@ -64,12 +67,21 @@ IntroScene.prototype.create = function () {
 
 IntroScene.prototype.myPreload = function () {
 	console.log('cargando audio');
+	
+	
 
+	
 	this.load.onLoadComplete.add(this.myInit, this);
 	this.load.audiosprite('soundFXSprite', 'assets/audio/soundFx.ogg', null, audioJSON);
 	this.load.start();
 	
+
+
+	
+	
 };
+
+
 
 IntroScene.prototype.myInit = function () {
 	console.log("IntroScene");
@@ -97,7 +109,7 @@ IntroScene.prototype.iniciarJuego = function () {
 	
 	
 	console.log("wanna iniciar");
-	this.state.game.state.start("Level9", true, true, 3);
+	this.state.game.state.start("Level5", true, true, 3);
 };
 
 

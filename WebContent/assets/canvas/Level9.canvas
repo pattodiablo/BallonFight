@@ -136,8 +136,8 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 500,
-                  "y": 628
+                  "x": 387,
+                  "y": 573
                 }
               },
               {
@@ -151,8 +151,8 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 289,
-                  "y": 133
+                  "x": 348,
+                  "y": 150
                 }
               },
               {
@@ -338,23 +338,18 @@
                 },
                 "info": {
                   "editorName": "platformTipo4",
-                  "x": -292,
-                  "y": -67
+                  "x": -129,
+                  "y": -53
                 }
               },
               {
-                "type": "prefab",
-                "prefab": "5",
-                "id": "f94cffe5-a891-4207-850c-9bd4db6bc6fa",
-                "asset-ref": {
-                  "file": "WebContent/assets/eviroment.json",
-                  "section": "Ground",
-                  "asset": "platformTipo1"
-                },
+                "type": "image",
+                "id": "c7575f4f-1690-439d-b1c8-a1968d7dfcdf",
+                "asset": "3",
                 "info": {
-                  "editorName": "platformTipo",
-                  "x": 24,
-                  "y": 433
+                  "editorName": "platformTipo5",
+                  "x": -126,
+                  "y": 373
                 }
               }
             ]
@@ -378,7 +373,7 @@
         {
           "type": "image",
           "id": "009765c7-217f-40ca-9cb8-e79f2ba9cbb9",
-          "asset": "3",
+          "asset": "4",
           "info": {
             "editorName": "greatJobScreen",
             "editorField": true,
@@ -388,7 +383,7 @@
         {
           "type": "image",
           "id": "7f777e61-467e-4c99-a4e8-1cba11e5c577",
-          "asset": "4",
+          "asset": "5",
           "info": {
             "editorName": "pauseBtn",
             "editorField": true,
@@ -419,9 +414,14 @@
     "3": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
-      "asset": "greatJobScreen"
+      "asset": "platformTipo3"
     },
     "4": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "Ground",
+      "asset": "greatJobScreen"
+    },
+    "5": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
       "asset": "pauseBtn"

@@ -101,10 +101,28 @@
       "key": "platformTipo3",
       "url": "assets/sprites/platformTipo3.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "backLoad",
+      "url": "assets/sprites/backLoad.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "progressBar",
+      "url": "assets/sprites/progressBar.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "loadingTitle",
+      "url": "assets/sprites/loadingTitle.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1564157323378",
+    "generated": "1564496148708",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",
