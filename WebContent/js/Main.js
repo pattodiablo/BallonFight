@@ -8,7 +8,7 @@ window.onload = function() {
 	console.log("pixel ratio "+  window.devicePixelRatio); 
 	console.log("largo "  + width + " ancho " + height);
 	  
-	var game = new Phaser.Game(width,height, Phaser.CANVAS);
+	var game = new Phaser.Game(width,height, Phaser.AUTO);
 	
 	var play = function(){};
 	

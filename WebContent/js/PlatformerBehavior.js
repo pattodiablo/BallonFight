@@ -155,7 +155,7 @@
 
 	}else{
 
-		var iniSound = this._player.sounds.fxBGSound2.play("bgSound2",0, 0.5, false, true);
+		iniSound = this._player.sounds.fxBGSound2.play("bgSound2",0, 0.5, false, true);
 		iniSound.onStop.add(soundStopped, this);
 	}
 		
@@ -450,7 +450,7 @@
 	PlatformerBehavior.prototype.resetLevel = function() {
 	
 		this._vidas--;
-		this._state.game.state.restart(this.CurrentState, true, true, this._vidas);
+		this._state.game.state.restart(this.CurrentState, true, this._vidas);
 
 		};
 

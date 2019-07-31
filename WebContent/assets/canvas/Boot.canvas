@@ -9,9 +9,9 @@
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      180,
-      180,
-      180
+      0,
+      0,
+      0
     ],
     "gridColor": [
       200,
@@ -41,10 +41,22 @@
     "info": {
       "editorName": "Boot",
       "setAll": [],
-      "children": []
+      "children": [{
+        "type": "image",
+        "id": "b0b08bb8-d678-4aee-a782-c79137e63470",
+        "asset": "0",
+        "info": {
+          "editorName": "background",
+          "editorField": true
+        }
+      }]
     }
   },
   "type": "STATE",
-  "asset-table": {},
+  "asset-table": {"0": {
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "background"
+  }},
   "prefab-table": {}
 }

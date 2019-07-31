@@ -18,7 +18,6 @@ GameSounds.prototype.constructor = GameSounds;
 
 GameSounds.prototype.preload = function (game) {
 	
-	
 	game.load.audio('coin', ['assets/audio/coin.mp3','assets/audio/coin.ogg']);
 	game.load.audio('bgSound', ['assets/audio/bgSound.mp3','assets/audio/bgSound.ogg']);
 	game.load.audio('playerBlow', ['assets/audio/playerBlow.mp3','assets/audio/playerBlow.ogg']);
@@ -41,8 +40,6 @@ GameSounds.prototype.create = function (game) {
 	fxBGSound = game.add.audio('bgSound');
 	fxBGSound.allowMultiple = false;
 	fxBGSound.addMarker('bgSound', 0, 6.69);
-	
-	
 	
 	fxBGSound2 = game.add.audio('bgSound2');
 	fxBGSound2.allowMultiple = false;
@@ -72,11 +69,5 @@ GameSounds.prototype.create = function (game) {
 	return allSounds;
 	
 };
-
-GameSounds.prototype.loadSounds = function () {
-	
-	
-		
-	};
 
 

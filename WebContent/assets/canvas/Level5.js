@@ -146,6 +146,7 @@ Level5.prototype.myCreate = function () {
 
 
 Level5.prototype.update = function () {
+	
 	this.behavior.update();
 };
 

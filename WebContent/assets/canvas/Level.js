@@ -131,6 +131,7 @@ Level.prototype.myPreload = function () {
 
 Level.prototype.myInit = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	this.game.sound.boot();
 };
 
 
@@ -145,10 +146,8 @@ Level.prototype.myCreate = function () {
 };
 
 
-
-
 Level.prototype.update = function () {
-	this.fBackground.fixedToCamera = true;
+
 	this.behavior.update();
 };
 

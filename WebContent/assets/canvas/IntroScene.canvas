@@ -43,82 +43,22 @@
     "info": {
       "editorName": "introScene",
       "setAll": [],
-      "children": [
-        {
-          "type": "image",
-          "id": "c6fca6e9-eaa9-44c4-828e-1d651247adde",
-          "asset": "0",
-          "info": {
-            "editorName": "introScene1",
-            "editorField": true
-          }
-        },
-        {
-          "type": "image",
-          "id": "6585f20b-98e6-4ddc-9694-42ce2d3f5eb0",
-          "asset": "1",
-          "info": {"editorName": "background"}
-        },
-        {
-          "type": "image",
-          "id": "0bd14648-ba0e-464e-90c5-3b657d544472",
-          "asset": "2",
-          "info": {
-            "editorName": "loadingTitle",
-            "x": 148,
-            "y": 446
-          }
-        },
-        {
-          "type": "image",
-          "id": "4416eefe-0d1f-4735-b5e8-f39b85321ca9",
-          "asset": "3",
-          "info": {
-            "editorName": "backLoad",
-            "x": 118,
-            "y": 570
-          }
-        },
-        {
-          "type": "image",
-          "id": "f227dfa2-e12a-4439-9133-bd911be0f5d0",
-          "asset": "4",
-          "info": {
-            "editorName": "progressBar",
-            "x": 118,
-            "y": 570
-          }
+      "children": [{
+        "type": "image",
+        "id": "c6fca6e9-eaa9-44c4-828e-1d651247adde",
+        "asset": "0",
+        "info": {
+          "editorName": "introScene1",
+          "editorField": true
         }
-      ]
+      }]
     }
   },
   "type": "STATE",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "introScene1"
-    },
-    "1": {
-      "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "background"
-    },
-    "2": {
-      "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "loadingTitle"
-    },
-    "3": {
-      "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "backLoad"
-    },
-    "4": {
-      "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "progressBar"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/eviroment.json",
+    "section": "Ground",
+    "asset": "introScene1"
+  }},
   "prefab-table": {}
 }
