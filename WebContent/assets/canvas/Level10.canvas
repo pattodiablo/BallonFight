@@ -21,7 +21,7 @@
     "showGrid": false,
     "create_after": "\tthis.myCreate();\r\n\r\n",
     "state_init_args": "vidas",
-    "state_init_before": "\nconsole.log(vidas);\nvidasTotales = vidas;\n\n",
+    "state_init_before": "\nconsole.log(vidas);\nvidasTotales = vidas;\n\tthis.LevelNumber = 10;\n",
     "state_preload_after": "this.myPreload();"
   },
   "stateSettings": {

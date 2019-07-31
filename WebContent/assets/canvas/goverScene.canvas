@@ -5,7 +5,7 @@
     "sceneWidth": 640,
     "sceneHeight": 960,
     "generateOnSave": true,
-    "enableStepping": false,
+    "enableStepping": true,
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
@@ -19,7 +19,9 @@
       200
     ],
     "showGrid": true,
-    "create_after": "\tthis.myCreate();"
+    "create_after": "\tthis.myCreate();",
+    "state_init_args": "levelReached",
+    "state_init_before": "this._levelReached = levelReached;"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -41,22 +43,44 @@
     "info": {
       "editorName": "goverScene",
       "setAll": [],
-      "children": [{
-        "type": "image",
-        "id": "3ac10591-9143-4065-9efa-034d89186d81",
-        "asset": "0",
-        "info": {
-          "editorName": "goverScene1",
-          "editorField": true
+      "children": [
+        {
+          "type": "image",
+          "id": "2b89fd3f-3054-4103-897c-45adc219739d",
+          "asset": "0",
+          "info": {
+            "editorName": "goverScene1",
+            "editorField": true,
+            "y": -4
+          }
+        },
+        {
+          "type": "bitmapText",
+          "id": "53c6c575-bfc0-4c57-af36-f8e8375b0dab",
+          "asset": "1",
+          "info": {
+            "editorName": "LevelReached",
+            "editorField": true,
+            "x": 416,
+            "y": 448,
+            "text": "level"
+          }
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/eviroment.json",
-    "section": "Ground",
-    "asset": "goverScene"
-  }},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "Ground",
+      "asset": "goverScene"
+    },
+    "1": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "BitmapFont",
+      "asset": "VT323-Regular.fnt"
+    }
+  },
   "prefab-table": {}
 }

@@ -119,10 +119,24 @@
       "key": "loadingTitle",
       "url": "assets/sprites/loadingTitle.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "playBtn",
+      "url": "assets/sprites/playBtn.png",
+      "overwrite": false
     }
   ],
+  "BitmapFont": [{
+    "type": "bitmapFont",
+    "key": "VT323-Regular.fnt",
+    "textureURL": "assets/fonts/VT323-Regular.png",
+    "atlasURL": "assets/fonts/VT323-Regular.fnt.xml",
+    "xSpacing": 0,
+    "ySpacing": 0
+  }],
   "meta": {
-    "generated": "1564496148708",
+    "generated": "1564607882172",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

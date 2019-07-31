@@ -20,7 +20,9 @@ var goverScene_proto = Object.create(Phaser.State.prototype);
 goverScene.prototype = goverScene_proto;
 goverScene.prototype.constructor = goverScene;
 
-goverScene.prototype.init = function () {
+goverScene.prototype.init = function (levelReached) {
+	
+	this._levelReached = levelReached;
 	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
@@ -31,17 +33,21 @@ goverScene.prototype.init = function () {
 goverScene.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
+	this.load.pack('BitmapFont', 'assets/eviroment.json');
 	
 };
 
 goverScene.prototype.create = function () {
-	var _goverScene1 = this.add.sprite(0.0, 0.0, 'goverScene');
+	var _goverScene1 = this.add.sprite(0.0, -4.0, 'goverScene');
+	
+	var _LevelReached = this.add.bitmapText(416.0, 448.0, 'VT323-Regular.fnt', 'level', 32);
 	
 	
 	
 	// fields
 	
 	this.fGoverScene1 = _goverScene1;
+	this.fLevelReached = _LevelReached;
 		this.myCreate();
 	
 };
@@ -50,6 +56,7 @@ goverScene.prototype.create = function () {
 // -- user code here --
 goverScene.prototype.myCreate = function () {
 	
+	this.fLevelReached.text = this._levelReached;
 	this.fGoverScene1.inputEnabled = true;
 	this.fGoverScene1.events.onInputDown.add﻿(this.iniciarJuego, this);
 	

@@ -27,10 +27,17 @@ Level2.prototype.init = function (vidas) {
 	console.log(vidas);
 	vidasTotales = vidas;
 	
+	this.myInit();
+	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
 	this.stage.backgroundColor = '#eff0ed';
+	
+};
+
+Level2.prototype.myInit = function () {
+	this.LevelNumber = 2;
 	
 };
 

@@ -40,6 +40,7 @@
 		this._pauseBtn.events.onInputUp.add(function(pointer) {
 		console.log("pause working");
 
+				
 				this._state.game.paused = true;
 				
 			
@@ -142,7 +143,8 @@
 		}
 		
 		}else{
-		this._state.game.state.start("GoverScene"); //pantalla de game over
+	console.log("level antes de enviar  " + this._state.state.getCurrentState().LevelNumber);
+		this._state.game.state.start("GoverScene",true, true, this._state.state.getCurrentState().LevelNumber); //pantalla de game over
 
 		}		
 
