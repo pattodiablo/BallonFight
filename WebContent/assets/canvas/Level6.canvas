@@ -131,8 +131,8 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 291,
-                  "y": 473
+                  "x": 189,
+                  "y": 483
                 }
               },
               {
@@ -163,6 +163,21 @@
                   "editorName": "coinStar2",
                   "x": 286,
                   "y": 859
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "0b9c55ba-d9b4-4661-b911-3bb274df974a",
+                "asset-ref": {
+                  "file": "WebContent/assets/eviroment.json",
+                  "section": "Ground",
+                  "asset": "coinStar"
+                },
+                "info": {
+                  "editorName": "coinStar3",
+                  "x": 408,
+                  "y": 482
                 }
               }
             ]

@@ -66,7 +66,7 @@ Level5.prototype.create = function () {
 	var _coinStar = new CoinStar(this.game, 49.0, 366.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 385.0, 575.0);
+	var _coinStar1 = new CoinStar(this.game, 387.0, 589.0);
 	_Coins.add(_coinStar1);
 	
 	var _coinStar2 = new CoinStar(this.game, 441.0, 111.0);

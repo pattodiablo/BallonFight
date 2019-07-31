@@ -38,13 +38,13 @@
 		//manejo de boton de pausa
 
 		this._pauseBtn.events.onInputUp.add(function(pointer) {
-		console.log("pause working");
-
+	
+		this._state.game.paused = true;
 				var pause = this._player.sounds.pause.play("pause",0, 0.5, false, true);
 				pause.onStop.add(pauseSoundStoped, this);
 
 				function pauseSoundStoped(){
-					this._state.game.paused = true;
+					
 				}
 				
 				

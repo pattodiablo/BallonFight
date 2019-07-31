@@ -63,7 +63,7 @@ Level6.prototype.create = function () {
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 291.0, 473.0);
+	var _coinStar = new CoinStar(this.game, 189.0, 483.0);
 	_Coins.add(_coinStar);
 	
 	var _coinStar1 = new CoinStar(this.game, 288.0, 144.0);
@@ -71,6 +71,9 @@ Level6.prototype.create = function () {
 	
 	var _coinStar2 = new CoinStar(this.game, 286.0, 859.0);
 	_Coins.add(_coinStar2);
+	
+	var _coinStar3 = new CoinStar(this.game, 408.0, 482.0);
+	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
 	
@@ -113,6 +116,7 @@ Level6.prototype.create = function () {
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
 	this.fCoinStar2 = _coinStar2;
+	this.fCoinStar3 = _coinStar3;
 	this.fEnemies = _Enemies;
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;

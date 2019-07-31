@@ -39,6 +39,7 @@ Level4.prototype.init = function (vidas) {
 Level4.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
+	this.load.pack('Enemy', 'assets/enemy.json');
 	this.load.pack('player', 'assets/pack.json');
 	
 	this.myPreload();
@@ -66,7 +67,7 @@ Level4.prototype.create = function () {
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 519.0, 263.0);
+	var _coinStar = new CoinStar(this.game, 522.0, 265.0);
 	_Coins.add(_coinStar);
 	
 	var _coinStar1 = new CoinStar(this.game, 206.0, 613.0);
@@ -78,6 +79,9 @@ Level4.prototype.create = function () {
 	var _Enemies = this.add.group();
 	
 	var _EnemyL2 = this.add.group();
+	
+	var _enemy = new Enemy2(this.game, 13.0, 83.0);
+	_EnemyL2.add(_enemy);
 	
 	var _lives = this.add.group();
 	
@@ -117,6 +121,7 @@ Level4.prototype.create = function () {
 	this.fCoinStar2 = _coinStar2;
 	this.fEnemies = _Enemies;
 	this.fEnemyL2 = _EnemyL2;
+	this.fEnemy = _enemy;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
 	this.fPlataformasMove = _plataformasMove;

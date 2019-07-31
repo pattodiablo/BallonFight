@@ -26,18 +26,12 @@ Level2.prototype.init = function (vidas) {
 	
 	console.log(vidas);
 	vidasTotales = vidas;
-	
-	this.myInit();
+		this.LevelNumber = 2;
 	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
 	this.stage.backgroundColor = '#eff0ed';
-	
-};
-
-Level2.prototype.myInit = function () {
-	this.LevelNumber = 2;
 	
 };
 
@@ -71,7 +65,7 @@ Level2.prototype.create = function () {
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 393.0, 721.0);
+	var _coinStar = new CoinStar(this.game, 384.0, 858.0);
 	_Coins.add(_coinStar);
 	
 	var _coinStar1 = new CoinStar(this.game, 386.0, 589.0);

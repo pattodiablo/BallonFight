@@ -31,18 +31,20 @@ goverScene.prototype.init = function (levelReached) {
 };
 
 goverScene.prototype.preload = function () {
+	
 	AllSounds_proto.preload(this);
+	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('BitmapFont', 'assets/eviroment.json');
 	
 };
 
 goverScene.prototype.create = function () {
-	var _goverScene1 = this.add.sprite(0.0, -4.0, 'goverScene');
+	var _goverScene1 = this.add.sprite(0.0, 0.0, 'goverScene');
 	
 	var _LevelReached = this.add.bitmapText(416.0, 448.0, 'VT323-Regular.fnt', 'level', 32);
 	
-
+	
 	
 	// fields
 	

@@ -40,6 +40,7 @@ Level3.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('player', 'assets/pack.json');
+	this.load.pack('Enemy', 'assets/enemy.json');
 	
 	this.myPreload();
 	
@@ -92,6 +93,9 @@ Level3.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
+	var _enemy = new Enemy(this.game, -6.0, 138.0);
+	_EnemyL3.add(_enemy);
+	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
@@ -119,6 +123,7 @@ Level3.prototype.create = function () {
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
+	this.fEnemy = _enemy;
 	this.fPlataformasMove = _plataformasMove;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;

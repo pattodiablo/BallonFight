@@ -271,7 +271,21 @@
             "editorName": "EnemyL3",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [{
+              "type": "prefab",
+              "prefab": "4",
+              "id": "9fca8dc9-317c-4038-800b-680ec5505565",
+              "asset-ref": {
+                "file": "WebContent/assets/enemy.json",
+                "section": "Enemy",
+                "asset": "enemy"
+              },
+              "info": {
+                "editorName": "enemy",
+                "x": -6,
+                "y": 138
+              }
+            }]
           }
         },
         {
@@ -288,7 +302,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "4",
+          "prefab": "5",
           "id": "fa97e99f-f958-4d94-88e0-08df9fe0b471",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -353,6 +367,7 @@
     "1": "WebContent/assets/sprites/Platform1.canvas",
     "2": "WebContent/assets/sprites/CoinStar.canvas",
     "3": "WebContent/assets/canvas/prefabs/Vida.canvas",
-    "4": "WebContent/assets/canvas/prefabs/Player.canvas"
+    "4": "WebContent/assets/canvas/prefabs/Enemy.canvas",
+    "5": "WebContent/assets/canvas/prefabs/Player.canvas"
   }
 }

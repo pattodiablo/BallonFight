@@ -21,7 +21,8 @@
     "showGrid": true,
     "create_after": "\tthis.myCreate();",
     "state_init_args": "levelReached",
-    "state_init_before": "this._levelReached = levelReached;"
+    "state_init_before": "this._levelReached = levelReached;",
+    "state_preload_before": "AllSounds_proto.preload(this);"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -50,8 +51,7 @@
           "asset": "0",
           "info": {
             "editorName": "goverScene1",
-            "editorField": true,
-            "y": -4
+            "editorField": true
           }
         },
         {

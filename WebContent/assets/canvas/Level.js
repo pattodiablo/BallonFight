@@ -58,7 +58,7 @@ Level.prototype.create = function () {
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo1 = new Platform1(this.game, -202.0, 207.0);
+	var _platformTipo1 = new Platform1(this.game, -95.0, 207.0);
 	_Plataformas.add(_platformTipo1);
 	
 	var _platformTipo2 = new Platform1(this.game, -179.0, 567.0);
