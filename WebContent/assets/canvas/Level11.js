@@ -8,25 +8,25 @@ var AllSounds_proto = Object.create(GameSounds.prototype);
 
 
 /**
- * Level10.
+ * Level11.
  */
-function Level10() {
+function Level11() {
 	
 	Phaser.State.call(this);
 	
 }
 
 /** @type Phaser.State */
-var Level10_proto = Object.create(Phaser.State.prototype);
-Level10.prototype = Level10_proto;
-Level10.prototype.constructor = Level10;
+var Level11_proto = Object.create(Phaser.State.prototype);
+Level11.prototype = Level11_proto;
+Level11.prototype.constructor = Level11;
 
-Level10.prototype.init = function (vidas) {
+Level11.prototype.init = function (vidas) {
 	
 	
 	console.log(vidas);
 	vidasTotales = vidas;
-		this.LevelNumber = 10;
+		this.LevelNumber = 11;
 	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
@@ -35,7 +35,7 @@ Level10.prototype.init = function (vidas) {
 	
 };
 
-Level10.prototype.preload = function () {
+Level11.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
@@ -45,19 +45,19 @@ Level10.prototype.preload = function () {
 	
 };
 
-Level10.prototype.create = function () {
+Level11.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'background');
 	
 	this.add.sprite(-160.0, 807.0, 'grass');
 	
 	var _Plataformas = this.add.group();
 	
-	this.add.sprite(-215.0, 211.0, 'platformTipo1', null, _Plataformas);
+	this.add.sprite(-203.0, 348.0, 'platformTipo1', null, _Plataformas);
 	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
+	var _platformTipo = new Platform1(this.game, 536.0, 348.0);
 	_Plataformas.add(_platformTipo);
 	
 	var _Coins = this.add.group();
@@ -65,13 +65,13 @@ Level10.prototype.create = function () {
 	var _coinStar = new CoinStar(this.game, 498.0, 588.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 549.0, 281.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 43.0, 469.0);
+	var _coinStar2 = new CoinStar(this.game, 273.0, 414.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 12.0, 133.0);
+	var _coinStar3 = new CoinStar(this.game, 31.0, 282.0);
 	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
@@ -97,7 +97,7 @@ Level10.prototype.create = function () {
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-471.0, 270.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-237.0, 217.0, 'platformTipo3', null, _plataformasMove);
 	
 	this.add.sprite(20.0, 387.0, 'platformTipo3', null, _plataformasMove);
 	
@@ -136,19 +136,19 @@ Level10.prototype.create = function () {
 
 /* --- end generated code --- */
 
-Level10.prototype.myPreload = function () {
+Level11.prototype.myPreload = function () {
 	AllSounds_proto.preload(this);
 };
 
 
-Level10.prototype.myCreate = function () {
+Level11.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
 	var allSounds = AllSounds_proto.create(this);
-	this.behavior = new PlatformerBehavior(this, "Level11", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+	this.behavior = new PlatformerBehavior(this, "Level12", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
 
 
-Level10.prototype.update = function () {
+Level11.prototype.update = function () {
 	this.behavior.update();
 };
 

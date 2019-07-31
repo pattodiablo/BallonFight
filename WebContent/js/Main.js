@@ -73,6 +73,16 @@ window.onload = function() {
 	game.state.add("Level8", Level8);
 	game.state.add("Level9", Level9);
 	game.state.add("Level10", Level10);
+	game.state.add("Level11", Level11);
+	game.state.add("Level12", Level12);
+	game.state.add("Level13", Level13);
+	game.state.add("Level14", Level14);
+	game.state.add("Level15", Level15);
+	game.state.add("Level16", Level16);
+	game.state.add("Level17", Level17);
+	game.state.add("Level18", Level18);
+	game.state.add("Level19", Level19);
+	game.state.add("Level20", Level20);
 	game.state.start("Play",true,true);
 	
 };	

@@ -8,25 +8,25 @@ var AllSounds_proto = Object.create(GameSounds.prototype);
 
 
 /**
- * Level10.
+ * Level15.
  */
-function Level10() {
+function Level15() {
 	
 	Phaser.State.call(this);
 	
 }
 
 /** @type Phaser.State */
-var Level10_proto = Object.create(Phaser.State.prototype);
-Level10.prototype = Level10_proto;
-Level10.prototype.constructor = Level10;
+var Level15_proto = Object.create(Phaser.State.prototype);
+Level15.prototype = Level15_proto;
+Level15.prototype.constructor = Level15;
 
-Level10.prototype.init = function (vidas) {
+Level15.prototype.init = function (vidas) {
 	
 	
 	console.log(vidas);
 	vidasTotales = vidas;
-		this.LevelNumber = 10;
+		this.LevelNumber = 15;
 	
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
@@ -35,7 +35,7 @@ Level10.prototype.init = function (vidas) {
 	
 };
 
-Level10.prototype.preload = function () {
+Level15.prototype.preload = function () {
 	
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
@@ -45,7 +45,7 @@ Level10.prototype.preload = function () {
 	
 };
 
-Level10.prototype.create = function () {
+Level15.prototype.create = function () {
 	this.add.sprite(0.0, 0.0, 'background');
 	
 	this.add.sprite(-160.0, 807.0, 'grass');
@@ -136,19 +136,19 @@ Level10.prototype.create = function () {
 
 /* --- end generated code --- */
 
-Level10.prototype.myPreload = function () {
+Level15.prototype.myPreload = function () {
 	AllSounds_proto.preload(this);
 };
 
 
-Level10.prototype.myCreate = function () {
+Level15.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
 	var allSounds = AllSounds_proto.create(this);
-	this.behavior = new PlatformerBehavior(this, "Level11", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+	this.behavior = new PlatformerBehavior(this, "Level16", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
 
 
-Level10.prototype.update = function () {
+Level15.prototype.update = function () {
 	this.behavior.update();
 };
 
