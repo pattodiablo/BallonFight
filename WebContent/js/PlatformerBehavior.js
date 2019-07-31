@@ -40,8 +40,13 @@
 		this._pauseBtn.events.onInputUp.add(function(pointer) {
 		console.log("pause working");
 
+				var pause = this._player.sounds.pause.play("pause",0, 0.5, false, true);
+				pause.onStop.add(pauseSoundStoped, this);
+
+				function pauseSoundStoped(){
+					this._state.game.paused = true;
+				}
 				
-				this._state.game.paused = true;
 				
 			
 		}, this);  
@@ -143,7 +148,10 @@
 		}
 		
 		}else{
-	console.log("level antes de enviar  " + this._state.state.getCurrentState().LevelNumber);
+
+
+	
+
 		this._state.game.state.start("GoverScene",true, true, this._state.state.getCurrentState().LevelNumber); //pantalla de game over
 
 		}		
@@ -156,9 +164,14 @@
 		this._firstime = false;
 
 	}else{
+		if(this._state.state.getCurrentState().key == "GoverScene"){
 
+
+		}else{
 		iniSound = this._player.sounds.fxBGSound2.play("bgSound2",0, 0.5, false, true);
-		iniSound.onStop.add(soundStopped, this);
+		iniSound.onStop.add(soundStopped, this);	
+		}
+		
 	}
 		
 

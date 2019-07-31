@@ -24,6 +24,8 @@ GameSounds.prototype.preload = function (game) {
 	game.load.audio('bgSound2', ['assets/audio/bgSound2.mp3','assets/audio/bgSound2.ogg']);
 	game.load.audio('finLevel', ['assets/audio/finLevel.mp3','assets/audio/finLevel.ogg']);
 	game.load.audio('dead', ['assets/audio/dead.mp3','assets/audio/dead.ogg']);
+	game.load.audio('pause', ['assets/audio/pause.mp3','assets/audio/pause.ogg']);
+	game.load.audio('ending', ['assets/audio/ending.mp3','assets/audio/ending.ogg']);
 	
 };
 
@@ -35,7 +37,7 @@ GameSounds.prototype.create = function (game) {
 	fxCoin.allowMultiple = true;
 	fxCoin.addMarker('coin', 0, 1);
 	
-	fxCoin.play('coin');
+	//fxCoin.play('coin');
 	
 	fxBGSound = game.add.audio('bgSound');
 	fxBGSound.allowMultiple = false;
@@ -59,12 +61,22 @@ GameSounds.prototype.create = function (game) {
 	dead.allowMultiple = false;
 	dead.addMarker('dead', 0, 2.7);
 	
+	pause = game.add.audio('pause');
+	pause.allowMultiple = false;
+	pause.addMarker('pause', 0, 0.7);
+	
+	ending = game.add.audio('ending');
+	ending.allowMultiple = false;
+	ending.addMarker('ending', 0, 8.5);
+	
 	allSounds.fxCoin = fxCoin;
 	allSounds.fxBGSound = fxBGSound;
 	allSounds.fxBGSound2 = fxBGSound2;
 	allSounds.fxPblow = fxPblow;
 	allSounds.finLevel = finLevel;
 	allSounds.dead = dead;
+	allSounds.pause = pause;
+	allSounds.ending = ending;
 	
 	return allSounds;
 	
