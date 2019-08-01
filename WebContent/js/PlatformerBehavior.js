@@ -157,7 +157,7 @@
 		}		
 
 	//poner intro musical dependiendo del nivel
-	if( this._state.state.getCurrentState().key == "Level" || this._state.state.getCurrentState().key == "Level5" || this._state.state.getCurrentState().key == "Level10" ){
+	if( this._state.state.getCurrentState().key == "Level" || this._state.state.getCurrentState().key == "Level5" || this._state.state.getCurrentState().key == "Level10" || this._state.state.getCurrentState().key == "Level15" || this._state.state.getCurrentState().key == "Level20"){
 
 		var iniSound = this._player.sounds.fxBGSound.play("bgSound",0, 0.5, false, true);
 		iniSound.onStop.add(soundStopped, this);
