@@ -52,26 +52,29 @@ Level17.prototype.create = function () {
 	
 	var _Plataformas = this.add.group();
 	
-	this.add.sprite(-215.0, 211.0, 'platformTipo1', null, _Plataformas);
-	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
-	_Plataformas.add(_platformTipo);
+	this.add.sprite(-4.0, 318.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(234.0, 183.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(474.0, 351.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(497.0, 757.0, 'platformTipo2', null, _Plataformas);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 498.0, 588.0);
+	var _coinStar = new CoinStar(this.game, 515.0, 284.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 275.0, 115.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 43.0, 469.0);
+	var _coinStar2 = new CoinStar(this.game, 171.0, 471.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 12.0, 133.0);
+	var _coinStar3 = new CoinStar(this.game, 41.0, 247.0);
 	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
@@ -80,6 +83,9 @@ Level17.prototype.create = function () {
 	_Enemies.add(_enemy);
 	
 	var _EnemyL2 = this.add.group();
+	
+	var _enemy1 = new Enemy2(this.game, 519.0, 665.0);
+	_EnemyL2.add(_enemy1);
 	
 	var _lives = this.add.group();
 	
@@ -97,9 +103,7 @@ Level17.prototype.create = function () {
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-471.0, 270.0, 'platformTipo3', null, _plataformasMove);
-	
-	this.add.sprite(20.0, 387.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-331.0, 271.0, 'platformTipo3', null, _plataformasMove);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -114,7 +118,6 @@ Level17.prototype.create = function () {
 	
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
-	this.fPlatformTipo = _platformTipo;
 	this.fCoins = _Coins;
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
@@ -123,6 +126,7 @@ Level17.prototype.create = function () {
 	this.fEnemies = _Enemies;
 	this.fEnemy = _enemy;
 	this.fEnemyL2 = _EnemyL2;
+	this.fEnemy1 = _enemy1;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
 	this.fPlataformasMove = _plataformasMove;

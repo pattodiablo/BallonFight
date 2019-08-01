@@ -75,8 +75,8 @@
                 "asset": "2",
                 "info": {
                   "editorName": "platformTipo3",
-                  "x": -215,
-                  "y": 211
+                  "x": 302,
+                  "y": 343
                 }
               },
               {
@@ -105,8 +105,8 @@
                 },
                 "info": {
                   "editorName": "platformTipo",
-                  "x": 499,
-                  "y": 278
+                  "x": -70,
+                  "y": 558
                 }
               }
             ]
@@ -131,8 +131,8 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 498,
-                  "y": 588
+                  "x": 282,
+                  "y": 680
                 }
               },
               {
@@ -146,8 +146,8 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 496,
-                  "y": 212
+                  "x": 420,
+                  "y": 274
                 }
               },
               {
@@ -161,8 +161,8 @@
                 },
                 "info": {
                   "editorName": "coinStar2",
-                  "x": 43,
-                  "y": 469
+                  "x": 55,
+                  "y": 490
                 }
               },
               {
@@ -201,8 +201,8 @@
               },
               "info": {
                 "editorName": "enemy",
-                "x": 251,
-                "y": 267
+                "x": 517,
+                "y": 849
               }
             }]
           }
@@ -214,7 +214,21 @@
             "editorName": "EnemyL2",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [{
+              "type": "prefab",
+              "prefab": "4",
+              "id": "a2cb145c-1e27-4dcb-83d1-88d812288c39",
+              "asset-ref": {
+                "file": "WebContent/assets/enemy.json",
+                "section": "Enemy",
+                "asset": "enemy2"
+              },
+              "info": {
+                "editorName": "enemy1",
+                "x": 302,
+                "y": 255
+              }
+            }]
           }
         },
         {
@@ -227,7 +241,7 @@
             "children": [
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "f07502ac-6e55-4e91-864f-269994eec9d7",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -242,7 +256,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "c6b501ee-af08-4030-8d92-b2b700469cce",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -257,7 +271,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "00840454-1f65-4ede-8776-580155dbbb37",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -299,8 +313,8 @@
                 "asset": "3",
                 "info": {
                   "editorName": "platformTipo1",
-                  "x": -471,
-                  "y": 270
+                  "x": -490,
+                  "y": -64
                 }
               },
               {
@@ -309,8 +323,8 @@
                 "asset": "3",
                 "info": {
                   "editorName": "platformTipo2",
-                  "x": 20,
-                  "y": 387
+                  "x": -220,
+                  "y": 479
                 }
               }
             ]
@@ -318,7 +332,7 @@
         },
         {
           "type": "prefab",
-          "prefab": "5",
+          "prefab": "6",
           "id": "fa97e99f-f958-4d94-88e0-08df9fe0b471",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -393,7 +407,8 @@
     "1": "WebContent/assets/sprites/Platform1.canvas",
     "2": "WebContent/assets/sprites/CoinStar.canvas",
     "3": "WebContent/assets/canvas/prefabs/Enemy3.canvas",
-    "4": "WebContent/assets/canvas/prefabs/Vida.canvas",
-    "5": "WebContent/assets/canvas/prefabs/Player.canvas"
+    "4": "WebContent/assets/canvas/prefabs/Enemy2.canvas",
+    "5": "WebContent/assets/canvas/prefabs/Vida.canvas",
+    "6": "WebContent/assets/canvas/prefabs/Player.canvas"
   }
 }

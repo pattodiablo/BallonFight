@@ -70,16 +70,6 @@
             "setAll": [],
             "children": [
               {
-                "type": "image",
-                "id": "d9c4c205-8c48-483e-81fb-74c4620e7e37",
-                "asset": "2",
-                "info": {
-                  "editorName": "platformTipo3",
-                  "x": -215,
-                  "y": 211
-                }
-              },
-              {
                 "type": "prefab",
                 "prefab": "0",
                 "id": "df2ffe35-33f3-496b-9939-16f8327f6c1c",
@@ -95,18 +85,43 @@
                 }
               },
               {
-                "type": "prefab",
-                "prefab": "1",
-                "id": "4a880083-9ac0-4e17-8c55-b1de3ca2bbdc",
-                "asset-ref": {
-                  "file": "WebContent/assets/eviroment.json",
-                  "section": "Ground",
-                  "asset": "platformTipo1"
-                },
+                "type": "image",
+                "id": "81bfd025-de5c-4bcc-bf64-736a1db0f49e",
+                "asset": "2",
                 "info": {
-                  "editorName": "platformTipo",
-                  "x": 499,
-                  "y": 278
+                  "editorName": "platformTipo5",
+                  "x": -4,
+                  "y": 318
+                }
+              },
+              {
+                "type": "image",
+                "id": "96bd7a21-6813-4395-a7d9-b0a0a6383cca",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo6",
+                  "x": 234,
+                  "y": 183
+                }
+              },
+              {
+                "type": "image",
+                "id": "d6253afc-ca60-42fd-9047-0ddeb9fff656",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo7",
+                  "x": 474,
+                  "y": 351
+                }
+              },
+              {
+                "type": "image",
+                "id": "8896a7ad-373d-4ba8-aee5-3353e72e0f0a",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo8",
+                  "x": 497,
+                  "y": 757
                 }
               }
             ]
@@ -122,7 +137,7 @@
             "children": [
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "16dd43b6-1a10-49f7-bcb6-7d2213f4cbe9",
                 "asset-ref": {
                   "file": "WebContent/assets/eviroment.json",
@@ -131,13 +146,13 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 498,
-                  "y": 588
+                  "x": 515,
+                  "y": 284
                 }
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "70dc0494-1318-4bcf-a17c-21fc3aa14828",
                 "asset-ref": {
                   "file": "WebContent/assets/eviroment.json",
@@ -146,13 +161,13 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 496,
-                  "y": 212
+                  "x": 275,
+                  "y": 115
                 }
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "03692699-eb5a-43c5-a586-89d9a1b1b064",
                 "asset-ref": {
                   "file": "WebContent/assets/eviroment.json",
@@ -161,13 +176,13 @@
                 },
                 "info": {
                   "editorName": "coinStar2",
-                  "x": 43,
-                  "y": 469
+                  "x": 171,
+                  "y": 471
                 }
               },
               {
                 "type": "prefab",
-                "prefab": "2",
+                "prefab": "1",
                 "id": "5030dee0-794a-4c03-ad95-f6995da69c31",
                 "asset-ref": {
                   "file": "WebContent/assets/eviroment.json",
@@ -176,8 +191,8 @@
                 },
                 "info": {
                   "editorName": "coinStar3",
-                  "x": 12,
-                  "y": 133
+                  "x": 41,
+                  "y": 247
                 }
               }
             ]
@@ -192,7 +207,7 @@
             "setAll": [],
             "children": [{
               "type": "prefab",
-              "prefab": "3",
+              "prefab": "2",
               "id": "7f3e3be3-b9ea-476c-9f14-475a45165526",
               "asset-ref": {
                 "file": "WebContent/assets/enemy.json",
@@ -214,7 +229,21 @@
             "editorName": "EnemyL2",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [{
+              "type": "prefab",
+              "prefab": "3",
+              "id": "4b6c093f-d017-49e0-9ed7-1538c7f38c6a",
+              "asset-ref": {
+                "file": "WebContent/assets/enemy.json",
+                "section": "Enemy",
+                "asset": "enemy2"
+              },
+              "info": {
+                "editorName": "enemy1",
+                "x": 519,
+                "y": 665
+              }
+            }]
           }
         },
         {
@@ -292,28 +321,16 @@
             "x": 471,
             "y": 267,
             "setAll": [],
-            "children": [
-              {
-                "type": "image",
-                "id": "f5789ac3-f09d-47c3-804f-0814b0277454",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo1",
-                  "x": -471,
-                  "y": 270
-                }
-              },
-              {
-                "type": "image",
-                "id": "a6f60393-f874-4e2b-8073-14b1de8ba9d8",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo2",
-                  "x": 20,
-                  "y": 387
-                }
+            "children": [{
+              "type": "image",
+              "id": "a6f60393-f874-4e2b-8073-14b1de8ba9d8",
+              "asset": "3",
+              "info": {
+                "editorName": "platformTipo2",
+                "x": -331,
+                "y": 271
               }
-            ]
+            }]
           }
         },
         {
@@ -370,7 +387,7 @@
     "2": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
-      "asset": "platformTipo1"
+      "asset": "platformTipo2"
     },
     "3": {
       "file": "WebContent/assets/eviroment.json",
@@ -390,9 +407,9 @@
   },
   "prefab-table": {
     "0": "WebContent/assets/canvas/prefabs/Piso.canvas",
-    "1": "WebContent/assets/sprites/Platform1.canvas",
-    "2": "WebContent/assets/sprites/CoinStar.canvas",
-    "3": "WebContent/assets/canvas/prefabs/Enemy3.canvas",
+    "1": "WebContent/assets/sprites/CoinStar.canvas",
+    "2": "WebContent/assets/canvas/prefabs/Enemy3.canvas",
+    "3": "WebContent/assets/canvas/prefabs/Enemy2.canvas",
     "4": "WebContent/assets/canvas/prefabs/Vida.canvas",
     "5": "WebContent/assets/canvas/prefabs/Player.canvas"
   }

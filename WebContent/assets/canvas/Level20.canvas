@@ -70,16 +70,6 @@
             "setAll": [],
             "children": [
               {
-                "type": "image",
-                "id": "d9c4c205-8c48-483e-81fb-74c4620e7e37",
-                "asset": "2",
-                "info": {
-                  "editorName": "platformTipo3",
-                  "x": -215,
-                  "y": 211
-                }
-              },
-              {
                 "type": "prefab",
                 "prefab": "0",
                 "id": "df2ffe35-33f3-496b-9939-16f8327f6c1c",
@@ -105,8 +95,48 @@
                 },
                 "info": {
                   "editorName": "platformTipo",
-                  "x": 499,
-                  "y": 278
+                  "x": 195,
+                  "y": 869
+                }
+              },
+              {
+                "type": "image",
+                "id": "153571f5-6130-4f5b-a84a-ffc920935b3d",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo1",
+                  "x": 423,
+                  "y": 475
+                }
+              },
+              {
+                "type": "image",
+                "id": "a6ae78d9-1fe5-4783-a962-d320d9733a5a",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo4",
+                  "x": 89,
+                  "y": 519
+                }
+              },
+              {
+                "type": "image",
+                "id": "9a26ad43-edbb-44b1-84c2-56092c7ff472",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo3",
+                  "x": 270,
+                  "y": 839
+                }
+              },
+              {
+                "type": "image",
+                "id": "a2b1a88f-baa5-4884-88d0-7c1b923d2ee1",
+                "asset": "2",
+                "info": {
+                  "editorName": "platformTipo1",
+                  "x": -8,
+                  "y": 205
                 }
               }
             ]
@@ -131,8 +161,8 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 498,
-                  "y": 588
+                  "x": 503,
+                  "y": 136
                 }
               },
               {
@@ -146,8 +176,8 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 496,
-                  "y": 212
+                  "x": 459,
+                  "y": 383
                 }
               },
               {
@@ -161,8 +191,8 @@
                 },
                 "info": {
                   "editorName": "coinStar2",
-                  "x": 43,
-                  "y": 469
+                  "x": 135,
+                  "y": 415
                 }
               },
               {
@@ -176,8 +206,8 @@
                 },
                 "info": {
                   "editorName": "coinStar3",
-                  "x": 12,
-                  "y": 133
+                  "x": 312,
+                  "y": 765
                 }
               }
             ]
@@ -190,21 +220,38 @@
             "editorName": "Enemies",
             "editorField": true,
             "setAll": [],
-            "children": [{
-              "type": "prefab",
-              "prefab": "3",
-              "id": "7f3e3be3-b9ea-476c-9f14-475a45165526",
-              "asset-ref": {
-                "file": "WebContent/assets/enemy.json",
-                "section": "Enemy",
-                "asset": "enemy3"
+            "children": [
+              {
+                "type": "prefab",
+                "prefab": "3",
+                "id": "7f3e3be3-b9ea-476c-9f14-475a45165526",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy3"
+                },
+                "info": {
+                  "editorName": "enemy",
+                  "x": 540,
+                  "y": 853
+                }
               },
-              "info": {
-                "editorName": "enemy",
-                "x": 251,
-                "y": 267
+              {
+                "type": "prefab",
+                "prefab": "3",
+                "id": "717a9c5c-30da-471b-81c5-16fcdc6438c2",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy3"
+                },
+                "info": {
+                  "editorName": "enemy2",
+                  "x": 4,
+                  "y": 129
+                }
               }
-            }]
+            ]
           }
         },
         {
@@ -214,7 +261,21 @@
             "editorName": "EnemyL2",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [{
+              "type": "prefab",
+              "prefab": "4",
+              "id": "ec0c5b64-fce9-4bda-b500-bfdd2b241d7c",
+              "asset-ref": {
+                "file": "WebContent/assets/enemy.json",
+                "section": "Enemy",
+                "asset": "enemy2"
+              },
+              "info": {
+                "editorName": "enemy3",
+                "x": 565,
+                "y": 115
+              }
+            }]
           }
         },
         {
@@ -227,7 +288,7 @@
             "children": [
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "f07502ac-6e55-4e91-864f-269994eec9d7",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -242,7 +303,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "c6b501ee-af08-4030-8d92-b2b700469cce",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -257,7 +318,7 @@
               },
               {
                 "type": "prefab",
-                "prefab": "4",
+                "prefab": "5",
                 "id": "00840454-1f65-4ede-8776-580155dbbb37",
                 "asset-ref": {
                   "file": "WebContent/assets/pack.json",
@@ -292,33 +353,21 @@
             "x": 471,
             "y": 267,
             "setAll": [],
-            "children": [
-              {
-                "type": "image",
-                "id": "f5789ac3-f09d-47c3-804f-0814b0277454",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo1",
-                  "x": -471,
-                  "y": 270
-                }
-              },
-              {
-                "type": "image",
-                "id": "a6f60393-f874-4e2b-8073-14b1de8ba9d8",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo2",
-                  "x": 20,
-                  "y": 387
-                }
+            "children": [{
+              "type": "image",
+              "id": "a6f60393-f874-4e2b-8073-14b1de8ba9d8",
+              "asset": "3",
+              "info": {
+                "editorName": "platformTipo2",
+                "x": 29,
+                "y": -67
               }
-            ]
+            }]
           }
         },
         {
           "type": "prefab",
-          "prefab": "5",
+          "prefab": "6",
           "id": "fa97e99f-f958-4d94-88e0-08df9fe0b471",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -370,7 +419,7 @@
     "2": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
-      "asset": "platformTipo1"
+      "asset": "platformTipo2"
     },
     "3": {
       "file": "WebContent/assets/eviroment.json",
@@ -393,7 +442,8 @@
     "1": "WebContent/assets/sprites/Platform1.canvas",
     "2": "WebContent/assets/sprites/CoinStar.canvas",
     "3": "WebContent/assets/canvas/prefabs/Enemy3.canvas",
-    "4": "WebContent/assets/canvas/prefabs/Vida.canvas",
-    "5": "WebContent/assets/canvas/prefabs/Player.canvas"
+    "4": "WebContent/assets/canvas/prefabs/Enemy2.canvas",
+    "5": "WebContent/assets/canvas/prefabs/Vida.canvas",
+    "6": "WebContent/assets/canvas/prefabs/Player.canvas"
   }
 }

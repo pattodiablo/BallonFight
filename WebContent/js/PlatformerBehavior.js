@@ -13,7 +13,7 @@
 		
 	// physics
 		this._arcade = state.game.physics.arcade;
-		this._arcade.gravity.y = 200;
+		this._arcade.gravity.y = 250;
 
 	// player
 		this._player = player;
@@ -615,7 +615,7 @@ PlatformerBehavior.prototype.updatePlatform = function(platform) {
 	}else{
 
 		var velo = platform.body.velocity;
-		var originalPos = platform.originalPos;
+
 	
 
 		if(platform.distance<=0){

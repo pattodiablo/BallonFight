@@ -61,9 +61,10 @@
           "info": {
             "editorName": "LevelReached",
             "editorField": true,
-            "x": 416,
+            "x": 448,
             "y": 448,
-            "text": "level"
+            "text": "level",
+            "fontSize": 64
           }
         }
       ]
@@ -79,7 +80,7 @@
     "1": {
       "file": "WebContent/assets/eviroment.json",
       "section": "BitmapFont",
-      "asset": "VT323-Regular.fnt"
+      "asset": "PixelFont"
     }
   },
   "prefab-table": {}

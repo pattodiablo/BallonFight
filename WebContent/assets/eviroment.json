@@ -127,16 +127,26 @@
       "overwrite": false
     }
   ],
-  "BitmapFont": [{
-    "type": "bitmapFont",
-    "key": "VT323-Regular.fnt",
-    "textureURL": "assets/fonts/VT323-Regular.png",
-    "atlasURL": "assets/fonts/VT323-Regular.fnt.xml",
-    "xSpacing": 0,
-    "ySpacing": 0
-  }],
+  "BitmapFont": [
+    {
+      "type": "bitmapFont",
+      "key": "VT323-Regular.fnt",
+      "textureURL": "assets/fonts/VT323-Regular.png",
+      "atlasURL": "assets/fonts/VT323-Regular.fnt.xml",
+      "xSpacing": 0,
+      "ySpacing": 0
+    },
+    {
+      "type": "bitmapFont",
+      "key": "PixelFont",
+      "textureURL": "assets/fonts/PixelFont_0.png",
+      "atlasURL": "assets/fonts/PixelFont.xml",
+      "xSpacing": 0,
+      "ySpacing": 0
+    }
+  ],
   "meta": {
-    "generated": "1564607882172",
+    "generated": "1564675590401",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

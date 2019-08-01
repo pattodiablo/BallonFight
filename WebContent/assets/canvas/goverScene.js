@@ -42,7 +42,7 @@ goverScene.prototype.preload = function () {
 goverScene.prototype.create = function () {
 	var _goverScene1 = this.add.sprite(0.0, 0.0, 'goverScene');
 	
-	var _LevelReached = this.add.bitmapText(416.0, 448.0, 'VT323-Regular.fnt', 'level', 32);
+	var _LevelReached = this.add.bitmapText(448.0, 448.0, 'PixelFont', 'level', 64);
 	
 	
 	

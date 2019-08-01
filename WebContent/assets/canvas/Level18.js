@@ -52,31 +52,39 @@ Level18.prototype.create = function () {
 	
 	var _Plataformas = this.add.group();
 	
-	this.add.sprite(-215.0, 211.0, 'platformTipo1', null, _Plataformas);
+	this.add.sprite(485.0, 325.0, 'platformTipo1', null, _Plataformas);
 	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
-	_Plataformas.add(_platformTipo);
+	this.add.sprite(328.0, 897.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(391.0, 867.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(510.0, 836.0, 'platformTipo2', null, _Plataformas);
+	
+	this.add.sprite(-170.0, 646.0, 'platformTipo1', null, _Plataformas);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 498.0, 588.0);
+	var _coinStar = new CoinStar(this.game, 536.0, 479.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 309.0, 380.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 43.0, 469.0);
+	var _coinStar2 = new CoinStar(this.game, 48.0, 338.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 12.0, 133.0);
+	var _coinStar3 = new CoinStar(this.game, 485.0, 109.0);
 	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
 	
-	var _enemy = new Enemy3(this.game, 251.0, 267.0);
+	var _enemy2 = new Enemy3(this.game, 521.0, 758.0);
+	_Enemies.add(_enemy2);
+	
+	var _enemy = new Enemy3(this.game, 490.0, 238.0);
 	_Enemies.add(_enemy);
 	
 	var _EnemyL2 = this.add.group();
@@ -97,9 +105,7 @@ Level18.prototype.create = function () {
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-471.0, 270.0, 'platformTipo3', null, _plataformasMove);
-	
-	this.add.sprite(20.0, 387.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-210.0, 240.0, 'platformTipo3', null, _plataformasMove);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -114,13 +120,13 @@ Level18.prototype.create = function () {
 	
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
-	this.fPlatformTipo = _platformTipo;
 	this.fCoins = _Coins;
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
 	this.fCoinStar2 = _coinStar2;
 	this.fCoinStar3 = _coinStar3;
 	this.fEnemies = _Enemies;
+	this.fEnemy2 = _enemy2;
 	this.fEnemy = _enemy;
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;

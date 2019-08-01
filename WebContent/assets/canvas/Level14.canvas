@@ -75,8 +75,8 @@
                 "asset": "2",
                 "info": {
                   "editorName": "platformTipo3",
-                  "x": -215,
-                  "y": 211
+                  "x": 471,
+                  "y": 867
                 }
               },
               {
@@ -105,8 +105,8 @@
                 },
                 "info": {
                   "editorName": "platformTipo",
-                  "x": 499,
-                  "y": 278
+                  "x": 152,
+                  "y": 173
                 }
               }
             ]
@@ -131,8 +131,8 @@
                 },
                 "info": {
                   "editorName": "coinStar",
-                  "x": 498,
-                  "y": 588
+                  "x": 264,
+                  "y": 466
                 }
               },
               {
@@ -146,8 +146,8 @@
                 },
                 "info": {
                   "editorName": "coinStar1",
-                  "x": 496,
-                  "y": 212
+                  "x": 168,
+                  "y": 105
                 }
               },
               {
@@ -161,8 +161,8 @@
                 },
                 "info": {
                   "editorName": "coinStar2",
-                  "x": 43,
-                  "y": 469
+                  "x": 364,
+                  "y": 106
                 }
               },
               {
@@ -176,8 +176,8 @@
                 },
                 "info": {
                   "editorName": "coinStar3",
-                  "x": 12,
-                  "y": 133
+                  "x": 523,
+                  "y": 797
                 }
               }
             ]
@@ -201,8 +201,8 @@
               },
               "info": {
                 "editorName": "enemy",
-                "x": 251,
-                "y": 267
+                "x": 505,
+                "y": 777
               }
             }]
           }
@@ -280,7 +280,38 @@
             "editorName": "EnemyL3",
             "editorField": true,
             "setAll": [],
-            "children": []
+            "children": [
+              {
+                "type": "prefab",
+                "prefab": "5",
+                "id": "8a9c128c-d5c3-4209-8558-af9fb1181468",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy"
+                },
+                "info": {
+                  "editorName": "enemy1",
+                  "x": 250,
+                  "y": 321
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "5",
+                "id": "55cf0c14-5141-4fbe-9eea-143899c67461",
+                "asset-ref": {
+                  "file": "WebContent/assets/enemy.json",
+                  "section": "Enemy",
+                  "asset": "enemy"
+                },
+                "info": {
+                  "editorName": "enemy2",
+                  "x": 254,
+                  "y": 95
+                }
+              }
+            ]
           }
         },
         {
@@ -292,33 +323,21 @@
             "x": 471,
             "y": 267,
             "setAll": [],
-            "children": [
-              {
-                "type": "image",
-                "id": "f5789ac3-f09d-47c3-804f-0814b0277454",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo1",
-                  "x": -471,
-                  "y": 270
-                }
-              },
-              {
-                "type": "image",
-                "id": "a6f60393-f874-4e2b-8073-14b1de8ba9d8",
-                "asset": "3",
-                "info": {
-                  "editorName": "platformTipo2",
-                  "x": 20,
-                  "y": 387
-                }
+            "children": [{
+              "type": "image",
+              "id": "f5789ac3-f09d-47c3-804f-0814b0277454",
+              "asset": "3",
+              "info": {
+                "editorName": "platformTipo1",
+                "x": -250,
+                "y": 266
               }
-            ]
+            }]
           }
         },
         {
           "type": "prefab",
-          "prefab": "5",
+          "prefab": "6",
           "id": "fa97e99f-f958-4d94-88e0-08df9fe0b471",
           "asset-ref": {
             "file": "WebContent/assets/pack.json",
@@ -394,6 +413,7 @@
     "2": "WebContent/assets/sprites/CoinStar.canvas",
     "3": "WebContent/assets/canvas/prefabs/Enemy3.canvas",
     "4": "WebContent/assets/canvas/prefabs/Vida.canvas",
-    "5": "WebContent/assets/canvas/prefabs/Player.canvas"
+    "5": "WebContent/assets/canvas/prefabs/Enemy.canvas",
+    "6": "WebContent/assets/canvas/prefabs/Player.canvas"
   }
 }

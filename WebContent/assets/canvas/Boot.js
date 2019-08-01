@@ -90,7 +90,7 @@ Boot.prototype.myInit = function () {
 	console.log("Boot");
 	this.game.sound.boot();
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-	this.scale.setUserScale(0.5,0.5,0,0)
+	this.scale.setUserScale(0.5,0.5,0,0);
 
 };
 

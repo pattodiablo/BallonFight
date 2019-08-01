@@ -52,31 +52,31 @@ Level14.prototype.create = function () {
 	
 	var _Plataformas = this.add.group();
 	
-	this.add.sprite(-215.0, 211.0, 'platformTipo1', null, _Plataformas);
+	this.add.sprite(471.0, 867.0, 'platformTipo1', null, _Plataformas);
 	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
+	var _platformTipo = new Platform1(this.game, 152.0, 173.0);
 	_Plataformas.add(_platformTipo);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 498.0, 588.0);
+	var _coinStar = new CoinStar(this.game, 264.0, 466.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 168.0, 105.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 43.0, 469.0);
+	var _coinStar2 = new CoinStar(this.game, 364.0, 106.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 12.0, 133.0);
+	var _coinStar3 = new CoinStar(this.game, 523.0, 797.0);
 	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
 	
-	var _enemy = new Enemy3(this.game, 251.0, 267.0);
+	var _enemy = new Enemy3(this.game, 505.0, 777.0);
 	_Enemies.add(_enemy);
 	
 	var _EnemyL2 = this.add.group();
@@ -94,12 +94,16 @@ Level14.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
+	var _enemy1 = new Enemy(this.game, 250.0, 321.0);
+	_EnemyL3.add(_enemy1);
+	
+	var _enemy2 = new Enemy(this.game, 254.0, 95.0);
+	_EnemyL3.add(_enemy2);
+	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-471.0, 270.0, 'platformTipo3', null, _plataformasMove);
-	
-	this.add.sprite(20.0, 387.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-250.0, 266.0, 'platformTipo3', null, _plataformasMove);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -125,6 +129,8 @@ Level14.prototype.create = function () {
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
+	this.fEnemy1 = _enemy1;
+	this.fEnemy2 = _enemy2;
 	this.fPlataformasMove = _plataformasMove;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
