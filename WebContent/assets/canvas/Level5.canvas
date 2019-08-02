@@ -334,6 +334,40 @@
             "x": 555,
             "y": 9
           }
+        },
+        {
+          "type": "group",
+          "id": "3be9eb58-3a8a-4242-9e3d-341864baf900",
+          "info": {
+            "editorName": "ScreenLevel",
+            "editorField": true,
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "ce0c5e42-f4e2-439b-8857-b265902a23f8",
+                "asset": "4",
+                "info": {
+                  "editorName": "LevelScreen",
+                  "editorField": true,
+                  "y": -960
+                }
+              },
+              {
+                "type": "bitmapText",
+                "id": "400a5ef2-e4a3-4f46-9b80-5ba84ea3db9b",
+                "asset": "5",
+                "info": {
+                  "editorName": "PixelFont",
+                  "editorField": true,
+                  "x": 408,
+                  "y": -438,
+                  "text": "1",
+                  "fontSize": 80
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -359,6 +393,16 @@
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
       "asset": "pauseBtn"
+    },
+    "4": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "Ground",
+      "asset": "LevelScreen"
+    },
+    "5": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "BitmapFont",
+      "asset": "PixelFont"
     }
   },
   "prefab-table": {

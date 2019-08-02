@@ -134,7 +134,7 @@
                 "id": "a2b1a88f-baa5-4884-88d0-7c1b923d2ee1",
                 "asset": "2",
                 "info": {
-                  "editorName": "platformTipo1",
+                  "editorName": "platformTipo5",
                   "x": -8,
                   "y": 205
                 }
@@ -400,6 +400,40 @@
             "x": 555,
             "y": 9
           }
+        },
+        {
+          "type": "group",
+          "id": "d6f00796-a5cf-417e-888b-c54d9b89eaea",
+          "info": {
+            "editorName": "ScreenLevel",
+            "editorField": true,
+            "setAll": [],
+            "children": [
+              {
+                "type": "image",
+                "id": "9b40c031-e79a-45fc-8956-17dc2853431f",
+                "asset": "6",
+                "info": {
+                  "editorName": "LevelScreen",
+                  "editorField": true,
+                  "y": -960
+                }
+              },
+              {
+                "type": "bitmapText",
+                "id": "1ddad14b-683a-4865-8b9d-df85d61ad23c",
+                "asset": "7",
+                "info": {
+                  "editorName": "PixelFont",
+                  "editorField": true,
+                  "x": 408,
+                  "y": -438,
+                  "text": "1",
+                  "fontSize": 80
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -435,6 +469,16 @@
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
       "asset": "pauseBtn"
+    },
+    "6": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "Ground",
+      "asset": "LevelScreen"
+    },
+    "7": {
+      "file": "WebContent/assets/eviroment.json",
+      "section": "BitmapFont",
+      "asset": "PixelFont"
     }
   },
   "prefab-table": {

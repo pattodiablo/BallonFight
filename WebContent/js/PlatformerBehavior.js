@@ -1,5 +1,5 @@
 
-	function PlatformerBehavior(state, nextLevel, player, plataformas,platafmove, enemigos, enemigos2, enemigos3, coins, vidas, corazones, winScreen, pausebtn, sounds) {
+	function PlatformerBehavior(state, nextLevel,levelScreen, player, plataformas,platafmove, enemigos, enemigos2, enemigos3, coins, vidas, corazones, winScreen, pausebtn, sounds) {
 	// init
 	
 	//	this._sounds.play('coin');
@@ -10,7 +10,8 @@
 		this._playing = true;
 		this._canFly = false;
 		this._firstime = true;
-		
+		this._levelScreen = levelScreen;
+	
 	// physics
 		this._arcade = state.game.physics.arcade;
 		this._arcade.gravity.y = 250;
@@ -452,7 +453,20 @@
 		this.winerScreen.addOnce(this.winScreen, this);
 
 
+		
+  		this._state.add.tween(this._levelScreen).to({ y: 960 ﻿},500, Phaser.Easing.Bounce.Out, true);
+		
+		this._state.time.events.loop(1500, upScreen, this );
+		
+		function upScreen(){
+
+			this._state.add.tween(this._levelScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
 		}
+		
+
+		}
+
+
 
 	PlatformerBehavior.prototype.winScreen = function() {
 		

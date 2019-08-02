@@ -125,6 +125,12 @@
       "key": "playBtn",
       "url": "assets/sprites/playBtn.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "LevelScreen",
+      "url": "assets/sprites/LevelScreen.png",
+      "overwrite": false
     }
   ],
   "BitmapFont": [
@@ -146,7 +152,7 @@
     }
   ],
   "meta": {
-    "generated": "1564675590401",
+    "generated": "1564680254378",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -41,6 +41,7 @@ Level3.prototype.preload = function () {
 	this.load.pack('Ground', 'assets/eviroment.json');
 	this.load.pack('player', 'assets/pack.json');
 	this.load.pack('Enemy', 'assets/enemy.json');
+	this.load.pack('BitmapFont', 'assets/eviroment.json');
 	
 	this.myPreload();
 	
@@ -106,6 +107,12 @@ Level3.prototype.create = function () {
 	
 	var _pauseBtn = this.add.sprite(555.0, 9.0, 'pauseBtn');
 	
+	var _ScreenLevel = this.add.group();
+	
+	var _LevelScreen = this.add.sprite(0.0, -960.0, 'LevelScreen', null, _ScreenLevel);
+	
+	var _PixelFont = this.add.bitmapText(408.0, -438.0, 'PixelFont', '1', 80, _ScreenLevel);
+	
 	
 	
 	// fields
@@ -128,6 +135,9 @@ Level3.prototype.create = function () {
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
 	this.fPauseBtn = _pauseBtn;
+	this.fScreenLevel = _ScreenLevel;
+	this.fLevelScreen = _LevelScreen;
+	this.fPixelFont = _PixelFont;
 		this.myCreate();
 	
 	
@@ -143,7 +153,8 @@ Level3.prototype.myPreload = function () {
 Level3.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
 	var allSounds = AllSounds_proto.create(this);
-	this.behavior = new PlatformerBehavior(this, "Level4", this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+	this.fPixelFont.text = this.LevelNumber;
+	this.behavior = new PlatformerBehavior(this, "Level4",this.fScreenLevel, this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
 
 
