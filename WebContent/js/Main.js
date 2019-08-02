@@ -83,6 +83,7 @@ window.onload = function() {
 	game.state.add("Level18", Level18);
 	game.state.add("Level19", Level19);
 	game.state.add("Level20", Level20);
+	game.state.add("Level21", Level21);
 	game.state.start("Play",true,true);
 	
 };	

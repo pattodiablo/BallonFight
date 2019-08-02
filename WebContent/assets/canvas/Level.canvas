@@ -128,8 +128,8 @@
                 },
                 "info": {
                   "editorName": "platformTipo2",
-                  "x": -179,
-                  "y": 567
+                  "x": -178,
+                  "y": 511
                 }
               }
             ]
@@ -260,6 +260,19 @@
           }
         },
         {
+          "type": "bitmapText",
+          "id": "e10bcd75-c7c4-4f60-a42c-b6f1cd531d0a",
+          "asset": "2",
+          "info": {
+            "editorName": "PixelFont1",
+            "x": 49,
+            "y": 603,
+            "text": "Get all the coins.\nSwipe to move,\ntap or press to float",
+            "fontSize": 64,
+            "align": "center"
+          }
+        },
+        {
           "type": "prefab",
           "prefab": "4",
           "id": "fa97e99f-f958-4d94-88e0-08df9fe0b471",
@@ -277,7 +290,7 @@
         {
           "type": "image",
           "id": "009765c7-217f-40ca-9cb8-e79f2ba9cbb9",
-          "asset": "2",
+          "asset": "3",
           "info": {
             "editorName": "greatJobScreen",
             "editorField": true,
@@ -287,7 +300,7 @@
         {
           "type": "image",
           "id": "7f777e61-467e-4c99-a4e8-1cba11e5c577",
-          "asset": "3",
+          "asset": "4",
           "info": {
             "editorName": "pauseBtn",
             "editorField": true,
@@ -306,7 +319,7 @@
               {
                 "type": "image",
                 "id": "8f685243-55e6-4851-999d-dad8d228b181",
-                "asset": "4",
+                "asset": "5",
                 "info": {
                   "editorName": "LevelScreen",
                   "editorField": true,
@@ -316,7 +329,7 @@
               {
                 "type": "bitmapText",
                 "id": "c542d164-772d-4680-8235-5cab6396a6c3",
-                "asset": "5",
+                "asset": "2",
                 "info": {
                   "editorName": "PixelFont",
                   "editorField": true,
@@ -346,23 +359,23 @@
     },
     "2": {
       "file": "WebContent/assets/eviroment.json",
-      "section": "Ground",
-      "asset": "greatJobScreen"
+      "section": "BitmapFont",
+      "asset": "PixelFont"
     },
     "3": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
-      "asset": "pauseBtn"
+      "asset": "greatJobScreen"
     },
     "4": {
       "file": "WebContent/assets/eviroment.json",
       "section": "Ground",
-      "asset": "LevelScreen"
+      "asset": "pauseBtn"
     },
     "5": {
       "file": "WebContent/assets/eviroment.json",
-      "section": "BitmapFont",
-      "asset": "PixelFont"
+      "section": "Ground",
+      "asset": "LevelScreen"
     }
   },
   "prefab-table": {

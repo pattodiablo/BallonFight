@@ -62,7 +62,7 @@ Level.prototype.create = function () {
 	var _platformTipo1 = new Platform1(this.game, -95.0, 207.0);
 	_Plataformas.add(_platformTipo1);
 	
-	var _platformTipo2 = new Platform1(this.game, -179.0, 567.0);
+	var _platformTipo2 = new Platform1(this.game, -178.0, 511.0);
 	_Plataformas.add(_platformTipo2);
 	
 	var _plataformasMove = this.add.group();
@@ -90,6 +90,9 @@ Level.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	_EnemyL3.position.set(570.0, 288.0);
+	
+	var _PixelFont1 = this.add.bitmapText(49.0, 603.0, 'PixelFont', 'Get all the coins.\nSwipe to move,\ntap or press to float', 64);
+	_PixelFont1.align = 'center';
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);

@@ -53,31 +53,28 @@ Level16.prototype.create = function () {
 	
 	var _Plataformas = this.add.group();
 	
-	this.add.sprite(395.0, 460.0, 'platformTipo1', null, _Plataformas);
+	this.add.sprite(508.0, 441.0, 'platformTipo1', null, _Plataformas);
 	
 	var _floor1 = new Piso(this.game, 320.0, 960.0);
 	_Plataformas.add(_floor1);
 	
-	var _platformTipo = new Platform1(this.game, 499.0, 278.0);
+	this.add.sprite(-16.0, 306.0, 'platformTipo2', null, _Plataformas);
+	
+	var _platformTipo = new Platform1(this.game, -206.0, 574.0);
 	_Plataformas.add(_platformTipo);
-	
-	this.add.sprite(492.0, 870.0, 'platformTipo1', null, _Plataformas);
-	
-	var _platformTipo5 = new Platform1(this.game, -168.0, 189.0);
-	_Plataformas.add(_platformTipo5);
 	
 	var _Coins = this.add.group();
 	
-	var _coinStar = new CoinStar(this.game, 394.0, 396.0);
+	var _coinStar = new CoinStar(this.game, 13.0, 507.0);
 	_Coins.add(_coinStar);
 	
-	var _coinStar1 = new CoinStar(this.game, 496.0, 212.0);
+	var _coinStar1 = new CoinStar(this.game, 540.0, 376.0);
 	_Coins.add(_coinStar1);
 	
-	var _coinStar2 = new CoinStar(this.game, 266.0, 631.0);
+	var _coinStar2 = new CoinStar(this.game, 443.0, 551.0);
 	_Coins.add(_coinStar2);
 	
-	var _coinStar3 = new CoinStar(this.game, 567.0, 396.0);
+	var _coinStar3 = new CoinStar(this.game, 53.0, 241.0);
 	_Coins.add(_coinStar3);
 	
 	var _Enemies = this.add.group();
@@ -97,19 +94,19 @@ Level16.prototype.create = function () {
 	
 	var _EnemyL3 = this.add.group();
 	
-	var _enemy3 = new Enemy(this.game, 507.0, 799.0);
-	_EnemyL3.add(_enemy3);
-	
-	var _enemy2 = new Enemy(this.game, 463.0, 389.0);
+	var _enemy2 = new Enemy(this.game, 87.0, 413.0);
 	_EnemyL3.add(_enemy2);
 	
-	var _enemy1 = new Enemy(this.game, 36.0, 118.0);
-	_EnemyL3.add(_enemy1);
+	var _enemy3 = new Enemy(this.game, 153.0, 120.0);
+	_EnemyL3.add(_enemy3);
+	
+	var _enemy4 = new Enemy(this.game, 478.0, 270.0);
+	_EnemyL3.add(_enemy4);
 	
 	var _plataformasMove = this.add.group();
 	_plataformasMove.position.set(471.0, 267.0);
 	
-	this.add.sprite(-246.0, 427.0, 'platformTipo3', null, _plataformasMove);
+	this.add.sprite(-70.0, 351.0, 'platformTipo3', null, _plataformasMove);
 	
 	var _player = new Player(this.game, 81.0, 882.0);
 	this.add.existing(_player);
@@ -131,7 +128,6 @@ Level16.prototype.create = function () {
 	this.fPlataformas = _Plataformas;
 	this.fFloor1 = _floor1;
 	this.fPlatformTipo = _platformTipo;
-	this.fPlatformTipo5 = _platformTipo5;
 	this.fCoins = _Coins;
 	this.fCoinStar = _coinStar;
 	this.fCoinStar1 = _coinStar1;
@@ -141,9 +137,9 @@ Level16.prototype.create = function () {
 	this.fEnemyL2 = _EnemyL2;
 	this.fLives = _lives;
 	this.fEnemyL3 = _EnemyL3;
-	this.fEnemy3 = _enemy3;
 	this.fEnemy2 = _enemy2;
-	this.fEnemy1 = _enemy1;
+	this.fEnemy3 = _enemy3;
+	this.fEnemy4 = _enemy4;
 	this.fPlataformasMove = _plataformasMove;
 	this.fPlayer = _player;
 	this.fGreatJobScreen = _greatJobScreen;
@@ -167,7 +163,7 @@ Level16.prototype.myCreate = function () {
 	//this.sound.setDecodedCallback('coin', start, this);
 	var allSounds = AllSounds_proto.create(this);
 	this.fPixelFont.text = this.LevelNumber;
-	this.behavior = new PlatformerBehavior(this, "Level17",this.fScreenLevel, this.fPlayer,this.fScreenLevel, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
+	this.behavior = new PlatformerBehavior(this, "Level17",this.fScreenLevel, this.fPlayer, this.fPlataformas,this.fPlataformasMove, this.fEnemies, this.fEnemyL2,this.fEnemyL3, this.fCoins, vidasTotales,this.fLives, this.fGreatJobScreen,this.fPauseBtn , allSounds);
 };
 
 
