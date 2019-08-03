@@ -79,7 +79,7 @@ body {
 <div id = "turn"></div>
 <script type="text/javascript">
 
-var showingAd;
+var showingAd = true;
 
  if (document.getElementById("ap_iframe")){
 	
@@ -93,10 +93,12 @@ var showingAd;
           }
 
 function showAd (){
+
+
 	CloseBtn.style.visibility="visible";
 
  	document.getElementById("ap_iframe").style.visibility="visible"; 
-	 console.log("showing");
+
 	 
 	
 	 showingAd = true;
@@ -106,6 +108,7 @@ function showAd (){
 
 function hideAd (){
 	 console.log("cerrando");
+
 	 document.getElementById("ap_iframe").style.visibility="hidden";
 	 CloseBtn.style.visibility="hidden";
 	 showingAd = false;
