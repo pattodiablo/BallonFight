@@ -65,14 +65,14 @@ Boot.prototype.myPreload = function () {
 };
 
 Boot.prototype.loadStart = function () {
-	console.log("loadStart");
+
 	//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;	
 	
 	
 };
 
 Boot.prototype.fileComplete = function (progress, cacheKey, success, totalLoaded, totalFiles) {
-	console.log("FileCompleted");
+
 	
 	this.add.sprite(0.0, 0.0, 'background');
 	this.add.sprite(148.0, 446.0, 'loadingTitle');
@@ -81,13 +81,13 @@ Boot.prototype.fileComplete = function (progress, cacheKey, success, totalLoaded
 	
 	var progressBar = this.add.sprite(118.0, 570.0, 'progressBar');
 	this.load.setPreloadSprite(progressBar); 
-	console.log(cacheKey + " File Complete: " + progress + "% - " + totalLoaded + " out of " + totalFiles);
+	
 	
 	
 };
 
 Boot.prototype.myInit = function () {
-	console.log("Boot");
+	console.log("Game By pattodiablo");
 	this.game.sound.boot();
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.setUserScale(0.5,0.5,0,0);

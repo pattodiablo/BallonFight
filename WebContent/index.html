@@ -7,7 +7,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 
 <title>BallonFight</title>
-
+<script type="text/javascript" src="http://ad.leadbolt.net/show_app_ad.js?section_id=978843251"></script>
 <script src="lib/phaser.js"></script>
 <script src="js/Main.js"></script>
 <script src="js/PlatformerBehavior.js"></script>
@@ -37,6 +37,8 @@
 <script src="assets/canvas/IntroScene.js"></script>
 <script src="assets/canvas/goverScene.js"></script>
 
+
+
 <style>
 body {
 	background: #000;
@@ -56,12 +58,62 @@ body {
 				background-position: center center;
 				display:none;
 			}
-			
+#CloseBtn{
+
+			   background: #7D3B85;
+               font: 3em arial;
+               padding: 2% 4% 2% 4%;
+               color:white;
+               text-decoration: none;
+              position: fixed;;
+          	  right:0px;
+              top: 0px;
+              z-index:1000;
+               cursor:pointer;
+}
 			
 </style>
 
 </head>
 <body>
 <div id = "turn"></div>
+<script type="text/javascript">
+
+var showingAd;
+
+ if (document.getElementById("ap_iframe")){
+	
+  	document.getElementById("ap_iframe").style.visibility="hidden";
+    document.body.innerHTML += "<div id = 'CloseBtn' onclick = 'hideAd()'>Close</div>";
+  
+   CloseBtn.style.visibility="hidden"; 
+    	
+    showingAd = false;
+
+          }
+
+function showAd (){
+	CloseBtn.style.visibility="visible";
+
+ 	document.getElementById("ap_iframe").style.visibility="visible"; 
+	 console.log("showing");
+	 
+	
+	 showingAd = true;
+
+
+ }
+
+function hideAd (){
+	 console.log("cerrando");
+	 document.getElementById("ap_iframe").style.visibility="hidden";
+	 CloseBtn.style.visibility="hidden";
+	 showingAd = false;
+
+
+ }
+
+</script>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 
 	function PlatformerBehavior(state, nextLevel,levelScreen, player, plataformas,platafmove, enemigos, enemigos2, enemigos3, coins, vidas, corazones, winScreen, pausebtn, sounds) {
 	// init
+
 	
 	//	this._sounds.play('coin');
 		this._state = state;
@@ -36,6 +37,7 @@
 		this._pauseBtn = pausebtn;
 		this._pauseBtn.inputEnabled = true;
 
+
 		//manejo de boton de pausa
 
 		this._pauseBtn.events.onInputUp.add(function(pointer) {
@@ -57,7 +59,7 @@
   		  function unpause(event){
 			
 			if(this._state.game.paused){
-				console.log("not pausing");
+				
 				this._state.game.paused = false;
 
 			}
@@ -173,6 +175,22 @@
 		iniSound.onStop.add(soundStopped, this);	
 		}
 		
+	}
+		
+//poner intro musical dependiendo del nivel
+	if( this._state.state.getCurrentState().key == "Level6" || this._state.state.getCurrentState().key == "Level9" || this._state.state.getCurrentState().key == "Level14" || this._state.state.getCurrentState().key == "Level18"  ){
+
+		//código para publicidad
+		if(!showingAd){
+	
+			this._state.game.paused = true;
+				showAd();
+
+			}else{
+		this._state.game.paused = false;
+
+			}
+
 	}
 		
 
@@ -470,7 +488,7 @@
 
 	PlatformerBehavior.prototype.winScreen = function() {
 		
-		console.log("im here pantalla");
+
 			this._player.sounds.finLevel.play("finLevel",0, 0.5, false, true);
 			this._state.add.tween(this._winScreen).to({ y: 0 ﻿},500, Phaser.Easing.Bounce.Out, true);
 		
@@ -579,7 +597,7 @@
 			player.sounds.fxCoin.play("coin");
 			coin.visible = false;
 			coin.destroy();
-			console.log("wanna coin");
+		
 
 		}
 

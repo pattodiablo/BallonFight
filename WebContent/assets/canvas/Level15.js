@@ -23,8 +23,7 @@ Level15.prototype.constructor = Level15;
 
 Level15.prototype.init = function (vidas) {
 	
-	
-	console.log(vidas);
+
 	vidasTotales = vidas;
 		this.LevelNumber = 15;
 	

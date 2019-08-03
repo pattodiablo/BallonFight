@@ -54,7 +54,7 @@ IntroScene.prototype.create = function () {
 // -- user code here --
 
 IntroScene.prototype.myPreload = function () {
-	console.log('cargando audio');
+
 	
 
 };
@@ -62,7 +62,7 @@ IntroScene.prototype.myPreload = function () {
 
 
 IntroScene.prototype.myInit = function () {
-	console.log("IntroScene");
+
 
 	
 	
@@ -78,7 +78,7 @@ IntroScene.prototype.myCreate = function () {
 IntroScene.prototype.iniciarJuego = function () {
 
 	
-	console.log("wanna iniciar");
+
 	this.state.start("Level", true, true, 3);
 	
 };

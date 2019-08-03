@@ -5,8 +5,7 @@ window.onload = function() {
 	  var height = 960 ;
 	  var firstRunLandscape = false;
 	  
-	console.log("pixel ratio "+  window.devicePixelRatio); 
-	console.log("largo "  + width + " ancho " + height);
+
 	  
 	var game = new Phaser.Game(width,height, Phaser.AUTO);
 	
@@ -15,7 +14,7 @@ window.onload = function() {
 	play.prototype = {
 			
 			preload:function(){
-				console.log("paro zona");
+			
 				firstRunLandscape = game.scale.isGameLandscape;
 				if(game.device.desktop){
 					game.scale.forceOrientation(false, false);
